@@ -67,11 +67,11 @@ function WharehouseDetails() {
             <p>500</p>
           </div>
         </section>
-        <section className="inventory__cta">
-          <img className="inventory__trash" src={trash} alt="trash"></img>
-          <img className="inventory__edit" src={edit} alt="edit"></img>
-        </section>
       </div>
+      <section className="inventory__cta">
+        <img className="inventory__trash" src={trash} alt="trash"></img>
+        <img className="inventory__edit" src={edit} alt="edit"></img>
+      </section>
     </>
   );
 }
