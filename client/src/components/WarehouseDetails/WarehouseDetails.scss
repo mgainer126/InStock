@@ -1,5 +1,9 @@
+.warehouse-page {
+  width: 320px;
+  border: solid black 1px;
+}
 .info {
-  width: 100%;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -23,6 +27,7 @@
   &__edit-btn {
     margin-left: auto;
     margin-right: 2rem;
+    margin-top: 1rem;
     border: 1px solid;
     border-radius: 50%;
     background-color: #2e66e5;
@@ -33,6 +38,7 @@
   &__contact {
     border-bottom: solid 2px grey;
     display: flex;
+    width: 273px;
   }
   &__title {
     color: grey;
@@ -43,7 +49,7 @@
     margin-left: 0.5rem;
   }
   &__contact-info {
-    width: 10rem;
+    width: 7rem;
     margin-right: 0.5rem;
   }
 }
@@ -54,36 +60,58 @@
   display: flex;
 
   //   &__info {
-  //     display: flex;
+  //   x  display: flex;
   //     justify-content: space-around;
   //   }
   &__item {
     margin-right: 2rem;
-    width: 10rem;
+    width: 5rem;
     margin-left: 0.5rem;
   }
   //   &__detail {
   //     display: flex;
   //     justify-content: space-around;
   //   }
+
+  &__items {
+    display: flex;
+    // flex-wrap: wrap;
+    // width: 320px;
+  }
   &__cat {
     margin-right: 2rem;
     width: 10rem;
     margin-left: 0.5rem;
   }
   &__stats {
-    width: 10rem;
+    width: 6rem;
   }
   &__qty {
-    width: 10rem;
+    width: 6;
   }
-  &__cta {
+  &__cta--mobile {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 2px grey;
+  }
+  &__cta--tablet {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 2px grey;
+    display: none;
+  }
+  &__cta--mobile {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
     padding-bottom: 1rem;
     border-bottom: solid 2px grey;
   }
+
   &__filter {
     display: none;
   }
@@ -91,7 +119,7 @@
 
 @media screen and (min-width: 768px) {
   .tablet__alignment {
-    width: 100%;
+    width: 768px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -111,17 +139,52 @@
     }
   }
   .inventory {
+    display: flex;
+    flex-direction: column;
     &__filter {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
     }
     &__item {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
     }
     &__info {
       display: flex;
+    }
+    &__stats {
+      display: flex;
+      flex-direction: row;
+      width: 5rem;
+    }
+    &__stock {
+      display: flex;
+      flex-direction: row;
+    }
+    &__items {
+      display: flex;
+      flex-direction: row;
+    }
+    &__qty {
+      margin-left: 4rem;
+    }
+
+    &__cta--tablet {
+      display: flex;
       justify-content: space-between;
+      margin: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: solid 2px grey;
+    }
+    &__cta--mobile {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: solid 2px grey;
+      display: none;
     }
   }
 }

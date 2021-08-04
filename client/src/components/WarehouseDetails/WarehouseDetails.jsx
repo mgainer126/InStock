@@ -5,7 +5,7 @@ import back from "../../assets/images/Icons/arrow_back-24px.svg";
 
 function WharehouseDetails() {
   return (
-    <>
+    <div className="warehouse-page">
       <div className="info">
         <div className="info__wharehouse-head">
           <img className="info__back-btn" src={back} alt="back button"></img>
@@ -44,35 +44,41 @@ function WharehouseDetails() {
         </div>
 
         {/* Inventory Item  */}
-        <section className="inventory__info">
-          <div className="inventory__item">
-            <h4 className="info__title">INVENTORY ITEM</h4>
-            <p>Television</p>
-          </div>
-          <section className="inventory__detail">
-            <div className="inventory__cat">
-              <h4 className="info__title">CATEGORY</h4>
-              <p>Electronic</p>
+        <div className="inventory__items">
+          <section className="inventory__info">
+            <div className="inventory__item">
+              <h4 className="info__title">INVENTORY ITEM</h4>
+              <p>Television</p>
+            </div>
+            <section className="inventory__detail">
+              <div className="inventory__cat">
+                <h4 className="info__title">CATEGORY</h4>
+                <p>Electronic</p>
+              </div>
+            </section>
+          </section>
+          {/* Inventory Status */}
+          <section className="inventory__stock">
+            <div className="inventory__stats">
+              <h4 className="info__title">STATUS</h4>
+              <p>IN STOCK</p>
+            </div>
+            <div className="inventory__qty">
+              <h4 className="info__title">QTY</h4>
+              <p>500</p>
             </div>
           </section>
-        </section>
-        {/* Inventory Status */}
-        <section>
-          <div className="inventory__stats">
-            <h4 className="info__title">STATUS</h4>
-            <p>IN STOCK</p>
-          </div>
-          <div className="inventory__qty">
-            <h4 className="info__title">QTY</h4>
-            <p>500</p>
-          </div>
-        </section>
+          <section className="inventory__cta--tablet">
+            <img className="inventory__trash" src={trash} alt="trash"></img>
+            <img className="inventory__edit" src={edit} alt="edit"></img>
+          </section>
+        </div>
       </div>
-      <section className="inventory__cta">
+      <section className="inventory__cta--mobile">
         <img className="inventory__trash" src={trash} alt="trash"></img>
         <img className="inventory__edit" src={edit} alt="edit"></img>
       </section>
-    </>
+    </div>
   );
 }
 
