@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 
-// setup app,
+// setup app
 const port = 8080;
 
 //Middleware 
