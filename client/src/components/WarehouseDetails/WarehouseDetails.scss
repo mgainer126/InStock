@@ -1,6 +1,8 @@
 .info {
-  width: 320px;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
   &__wharehouse-head {
     display: flex;
     border-bottom: solid 2px grey;
@@ -27,6 +29,7 @@
   &__contact {
     border-bottom: solid 2px grey;
     display: flex;
+    justify-content: space-around;
   }
   &__title {
     color: grey;
@@ -43,19 +46,21 @@
 }
 
 .inventory {
-  width: 320px;
+  width: 100%;
   border-bottom: solid 2px grey;
-  &__info {
-    display: flex;
-  }
+  //   &__info {
+  //     display: flex;
+  //     justify-content: space-around;
+  //   }
   &__item {
     margin-right: 2rem;
     width: 10rem;
     margin-left: 0.5rem;
   }
-  &__detail {
-    display: flex;
-  }
+  //   &__detail {
+  //     display: flex;
+  //     justify-content: space-around;
+  //   }
   &__cat {
     margin-right: 2rem;
     width: 10rem;
@@ -71,5 +76,45 @@
     display: flex;
     justify-content: space-between;
     margin: 1rem;
+  }
+  &__filter {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tablet__alignment {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .info {
+    &__address {
+      border-right: solid grey;
+      padding-right: 3rem;
+      margin-top: 1rem;
+    }
+    &__contact {
+      border-bottom: none;
+      margin-top: 1rem;
+    }
+    &__title {
+      display: none;
+    }
+  }
+  .inventory {
+    &__filter {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__item {
+      display: flex;
+      flex-direction: row;
+    }
+    &__info {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
