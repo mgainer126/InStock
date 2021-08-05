@@ -5,8 +5,8 @@ class WarehouseInput extends Component {
     render(){
         return (
             <div> 
-                <div>
-                 <h1 className="form">Warehouse Details</h1>
+                <div className="form">
+                 <h1 className="form__title">Warehouse Details</h1>
                 <form className="form__container"> 
                 <label className="form__label" htmlFor="name">Warehouse Name</label>
                     <input type="text" className="form__input-box"/>
@@ -19,9 +19,10 @@ class WarehouseInput extends Component {
                 </form>
             </div>
 
-            <div>
-                <h1 className="form">Contact Details</h1>
+            <div className="form">
+                <h1 className="form__title">Contact Details</h1>
                 <form className="form__container"> 
+
                 <label className="form__label" htmlFor="name">Contact Name</label>
                     <input type="text" className="form__input-box"/>
                 <label className="form__label" htmlFor="name">Position</label>
@@ -30,14 +31,18 @@ class WarehouseInput extends Component {
                     <input type="text" className="form__input-box"/>
                 <label className="form__label" htmlFor="name">Country</label>
                     <input type="text" className="form__input-box"/>
-                <button className="form__cancel" type="submit">Cancel</button>
-                    {/* <button className="form__save" type="submit">Save</button> */}
+
+
+                <div className="button" >
+                <button className="button__cancel" type="submit">Cancel</button>
+                <button className="button__save" type="submit">Save</button>
+                </div>
+
                 </form>  
             </div> 
             </div>  
         )
     }
-        
 }
 export default WarehouseInput;
 
