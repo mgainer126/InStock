@@ -1,15 +1,23 @@
+.warehouse-page {
+  width: 320px;
+}
 .info {
-  width: 100%;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-self: center;
   &__wharehouse-head {
     display: flex;
     border-bottom: solid 2px grey;
+    width: 113%;
   }
   &__back-btn {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  &__warehouse-loc {
+    margin-right: 11rem;
   }
 
   &__address {
@@ -19,6 +27,7 @@
   &__edit-btn {
     margin-left: auto;
     margin-right: 2rem;
+    margin-top: 1rem;
     border: 1px solid;
     border-radius: 50%;
     background-color: #2e66e5;
@@ -29,7 +38,7 @@
   &__contact {
     border-bottom: solid 2px grey;
     display: flex;
-    justify-content: space-around;
+    width: 113%;
   }
   &__title {
     color: grey;
@@ -40,59 +49,92 @@
     margin-left: 0.5rem;
   }
   &__contact-info {
-    width: 10rem;
+    width: 13rem;
     margin-right: 0.5rem;
   }
 }
 
 .inventory {
   width: 100%;
-  border-bottom: solid 2px grey;
+  // border-bottom: solid 2px grey;
+  display: flex;
+
   //   &__info {
-  //     display: flex;
+  //   x  display: flex;
   //     justify-content: space-around;
   //   }
   &__item {
     margin-right: 2rem;
-    width: 10rem;
+    width: 5rem;
     margin-left: 0.5rem;
+    &--1 {
+      margin: 0;
+    }
+    &--2 {
+      margin: 0;
+    }
+    &--3 {
+      margin: 0;
+    }
+    &--4 {
+      margin: 0;
+    }
   }
   //   &__detail {
   //     display: flex;
   //     justify-content: space-around;
   //   }
+
+  &__items {
+    display: flex;
+    // flex-wrap: wrap;
+    // width: 320px;
+  }
   &__cat {
     margin-right: 2rem;
     width: 10rem;
     margin-left: 0.5rem;
   }
   &__stats {
-    width: 10rem;
+    width: 6rem;
   }
   &__qty {
-    width: 10rem;
+    width: 6;
   }
-  &__cta {
+
+  &__cta--tablet {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
+    padding-bottom: 1rem;
+    display: none;
   }
+  &__cta--mobile {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: solid 2px grey;
+    width: 113%;
+  }
+
   &__filter {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .warehouse-page {
+    width: 768px;
+  }
   .tablet__alignment {
-    width: 100%;
+    width: 768px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    border-top: 2px grey solid;
   }
   .info {
     &__address {
       border-right: solid grey;
-      padding-right: 3rem;
+      width: 43rem;
       margin-top: 1rem;
     }
     &__contact {
@@ -102,19 +144,81 @@
     &__title {
       display: none;
     }
+    &__wharehouse-head {
+      border-bottom: none;
+    }
+    &__edit-btn {
+      margin-left: 26rem;
+      border-radius: 16px;
+      height: 2rem;
+      width: 5rem;
+    }
+    &__contact-name {
+      width: 1rem;
+      margin-left: 1.5rem;
+    }
+    &__contact-info {
+      margin-left: 5.5rem;
+    }
   }
   .inventory {
+    display: flex;
+    flex-direction: column;
     &__filter {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
     }
     &__item {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      &--1 {
+        margin: 0;
+      }
+      &--2 {
+        margin-left: 6rem;
+      }
+      &--3 {
+        margin-left: 5rem;
+      }
+      &--4 {
+        margin-left: 5rem;
+      }
     }
+
     &__info {
       display: flex;
+    }
+    &__stats {
+      display: flex;
+      flex-direction: row;
+      width: 5rem;
+    }
+    &__stock {
+      display: flex;
+      flex-direction: row;
+    }
+    &__items {
+      display: flex;
+      flex-direction: row;
+    }
+    &__qty {
+      margin-left: 4rem;
+    }
+
+    &__cta--tablet {
+      display: flex;
       justify-content: space-between;
+      margin-left: 8rem;
+      padding-bottom: 1rem;
+    }
+    &__cta--mobile {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+      padding-bottom: 1rem;
+      display: none;
     }
   }
 }
