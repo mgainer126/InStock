@@ -33,11 +33,8 @@ class WarehouseInput extends Component {
                 <button className="form__cancel" type="submit">Cancel</button>
                     {/* <button className="form__save" type="submit">Save</button> */}
                 </form>  
-            </div>
-                
-           
-            
-            
+            </div> 
+            </div>  
         )
     }
         
