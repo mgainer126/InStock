@@ -9,7 +9,7 @@
   &__wharehouse-head {
     display: flex;
     border-bottom: solid 2px grey;
-    width: 100vw;
+    width: 113%;
   }
   &__back-btn {
     margin-left: 1rem;
@@ -38,7 +38,7 @@
   &__contact {
     border-bottom: solid 2px grey;
     display: flex;
-    width: 100vw;
+    width: 113%;
   }
   &__title {
     color: grey;
@@ -49,7 +49,7 @@
     margin-left: 0.5rem;
   }
   &__contact-info {
-    width: 9rem;
+    width: 13rem;
     margin-right: 0.5rem;
   }
 }
@@ -114,7 +114,7 @@
     justify-content: space-between;
     padding-bottom: 1rem;
     border-bottom: solid 2px grey;
-    width: 100vw;
+    width: 113%;
   }
 
   &__filter {
@@ -134,7 +134,7 @@
   .info {
     &__address {
       border-right: solid grey;
-      padding-right: 12rem;
+      width: 43rem;
       margin-top: 1rem;
     }
     &__contact {
