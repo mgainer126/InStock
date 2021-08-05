@@ -1,10 +1,12 @@
-import "./WarehouseInput.scss";
-import React, {Component} from "react";
+import React from 'react'
+import './WarehouseInput.scss'
 
-class WarehouseInput extends Component {
-    render(){
-        return (
-            <div> 
+
+function WarehouseInput (props) {
+    console.log(props)
+    return (
+        <div>
+        <div> 
                 <div className="form">
                  <h1 className="form__title">Warehouse Details</h1>
                 <form className="form__container"> 
@@ -35,14 +37,15 @@ class WarehouseInput extends Component {
 
                 <div className="button" >
                 <button className="button__cancel" type="submit">Cancel</button>
-                <button className="button__save" type="submit">Save</button>
+                {/* <button className="button__save" type="submit">{props.button}</button> */}
                 </div>
 
                 </form>  
             </div> 
             </div>  
-        )
-    }
+            </div> 
+    
+    )
 }
 export default WarehouseInput;
 
