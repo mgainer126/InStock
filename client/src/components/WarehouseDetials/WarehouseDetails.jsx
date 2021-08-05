@@ -1,7 +1,7 @@
-import "../WarehouseDetails/WarehouseDetails.scss";
-import trash from "../../assets/images/Icons/delete_outline-24px.svg";
-import edit from "../../assets/images/Icons/edit-24px.svg";
-import back from "../../assets/images/Icons/arrow_back-24px.svg";
+import "../WarehouseDetials/WarehouseDetails.scss";
+import back from "../../assets/Icons/arrow_back-24px.svg";
+import edit from "../../assets/Icons/edit-24px.svg";
+import trash from "../../assets/Icons/delete_outline-24px.svg";
 
 function WharehouseDetails() {
   return (
