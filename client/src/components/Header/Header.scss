@@ -1,0 +1,38 @@
+.header {
+  background-color: #232940;
+  margin: auto;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+    font-size: 0.8125rem;
+    color: white;
+
+    &--active {
+      background-color: #13182c;
+      width: 10.1875rem;
+      height: 2.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    &--inactive {
+      width: 10.1875rem;
+      height: 2.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+  }
+}
