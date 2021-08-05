@@ -15,4 +15,3 @@ app.use('/api/warehouse',routesWarehouse)
 app.listen(port, () => {
   console.log(`In stock is running on port ${port}`);
 });
-
