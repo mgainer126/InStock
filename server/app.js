@@ -14,3 +14,4 @@ app.use(cors());
 app.listen(port, () => {
     console.log(`In stock is running on port ${port}`)
 })
+
