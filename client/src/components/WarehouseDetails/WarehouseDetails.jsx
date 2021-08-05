@@ -48,12 +48,12 @@ function WharehouseDetails() {
           <section className="inventory__info">
             <div className="inventory__item">
               <h4 className="info__title">INVENTORY ITEM</h4>
-              <p>Television</p>
+              <p className="inventory__item--1">Television</p>
             </div>
             <section className="inventory__detail">
               <div className="inventory__cat">
                 <h4 className="info__title">CATEGORY</h4>
-                <p>Electronic</p>
+                <p className="inventory__item--2">Electronic</p>
               </div>
             </section>
           </section>
@@ -61,11 +61,11 @@ function WharehouseDetails() {
           <section className="inventory__stock">
             <div className="inventory__stats">
               <h4 className="info__title">STATUS</h4>
-              <p>IN STOCK</p>
+              <p className="inventory__item--3">IN STOCK</p>
             </div>
             <div className="inventory__qty">
               <h4 className="info__title">QTY</h4>
-              <p>500</p>
+              <p className="inventory__item--4">500</p>
             </div>
           </section>
           <section className="inventory__cta--tablet">
