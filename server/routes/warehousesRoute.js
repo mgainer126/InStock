@@ -8,60 +8,23 @@
 
 const express = require("express");
 const router = express.Router();
-// const videoDetails = require("../data/video-details.json");
-// const videos = require("../data/videos.json");
+
 const fs = require("fs");
 const path = require("path");
-const uniqid = require("uniqid");
 
-//Video Details
-const displayVideoDetails = () => {
-  const videoDetailsData = fs.readFileSync(
-    path.resolve(__dirname, "../data/video-details.json")
+const displayInventoryDetails = () => {
+  const inventoryDetailsData = fs.readFileSync(
+    path.resolve(__dirname, "../data/inventories.json")
   );
-  const parsedVideoDetails = JSON.parse(videoDetailsData);
-  console.log(parsedVideoDetails);
-  return parsedVideoDetails;
+  const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
+  console.log(parsedInventoryDetails);
+  return parsedInventoryDetails;
 };
 
-router.get("/video-details:id", (req, res) => {
-  const videoDetails = displayVideoDetails();
-  res.json(videoDetails);
-  console.log(videoDetails);
-});
-
-//Videos
-const videos = () => {
-  const videosData = fs.readFileSync(
-    path.resolve(__dirname, "../data/videos.json")
-  );
-  const parsedVideos = JSON.parse(videosData);
-  console.log(parsedVideos);
-  return parsedVideos;
-};
-
-router.get("/videos", (req, res) => {
-  const videoList = videos();
-  res.json(videoList);
-});
-
-router.post("/videos", (req, res) => {
-  const newVideo = displayVideoDetails();
-  let randomImage = Math.floor(Math.random() * 6) + 1;
-  const videoObj = {
-    id: uniqid(),
-    title: req.body.videoTitle,
-    channel: "Matt Gainer",
-    image: `https://source.unsplash.com/collection/${randomImage}/1600x900`,
-    description: req.body.videoDesc,
-    timestamp: +new Date(),
-    likes: 1500,
-    views: 3200,
-  };
-  console.log(videoObj);
-  newVideo.unshift(videoObj);
-  fs.writeFileSync("./data/videos.json", JSON.stringify(newVideo));
-  res.json(newVideo);
+router.get("/inventory", (req, res) => {
+  const inventoryDetails = displayInventoryDetails();
+  res.json(inventoryDetails);
+  console.log(inventoryDetails);
 });
 
 module.exports = router;
