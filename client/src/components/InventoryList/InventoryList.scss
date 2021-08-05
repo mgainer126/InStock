@@ -1,0 +1,16 @@
+.head {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  &__search-box {
+    border-radius: 10px;
+  }
+  &__button {
+    border-radius: 10px;
+    background-color: #2e66e6;
+    color: white;
+    margin-top: 1rem;
+  }
+}
