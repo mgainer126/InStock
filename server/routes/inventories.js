@@ -4,15 +4,8 @@ const fs = require("fs");
 const dbInventories = "./data/inventories.json";
 let inventories = JSON.parse(fs.readFileSync(dbInventories, "utf8"));
 
-router.get('/:wareHouseId',(req,res) => {
-    const {wareHouseId} = req.params;
-    if(wareHouseId){
-        const inventoriesFiltered = inventories.filter(inventory => inventory.warehouseID === wareHouseId)
-        res.status(200).json(inventoriesFiltered);
-    }else {
-        res.status(400).json({message:'warehouseId is required'});
-    }
-    
-})
+router.get("", (req, res) => {
+  res.status(200).json(inventories);
+});
 
 module.exports = router;
