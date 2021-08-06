@@ -1,16 +1,47 @@
 .head {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    height: 36px;
+    width: 115px;
+    left: 40px;
+    top: 168px;
+    margin-right: auto;
+    margin-left: 1rem;
+  }
   &__form {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
   &__search-box {
-    border-radius: 10px;
+    height: 36px;
+    width: 295px;
+    left: 40px;
+    top: 220px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #bdc5d5;
+    box-sizing: border-box;
   }
   &__button {
     border-radius: 10px;
     background-color: #2e66e6;
     color: white;
     margin-top: 1rem;
+    height: 36px;
+    width: 295px;
+    left: 40px;
+    top: 272px;
+    border-radius: 20px;
+    padding: 8px, 103px, 8px, 103px;
   }
+}
+
+.filter {
+  display: none;
 }
