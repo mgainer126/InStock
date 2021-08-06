@@ -46,5 +46,14 @@ const validateEmail = (email) => {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 };
+router.patch('/:id', (req, res) => {
+  const warehouse = dbWarehouses.find(warehouse=> warehouse.id === parseInt(req.params.id));
+  if (!warehouse) return res.status(404).json({ message: 'Not Found' });
+
+  warehouse.name = req.body.name;
+  
+
+  res.json(warehouse);
+});
 
 module.exports = router;
