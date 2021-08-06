@@ -3,15 +3,15 @@
 @use '../../partials/typography' as *;
 
 .card {
-	border: 2px solid $white;
 	background-color: $white;
-	padding: 20px;
-	box-shadow: $light-grey;
+	margin: 20px;
 
 	&__container {
 		@include tablet {
 			display: flex;
+			flex-direction: column;
 			justify-content: space-between;
+			border-top: 2px solid $Cloud;
 		}
 	}
 }
@@ -21,16 +21,18 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		align-items: center;
+		padding: 20px;
+		// align-items: center;
 	}
 
 	&__title {
 		border-top: 2px solid $Cloud;
-		padding-top: 20px;
+		padding: 20px;
+		padding-bottom: 10px;
 		@include mobile-subheader;
-		// @include tablet {
-		// 	border-top: none;
-		// }
+		@include tablet {
+			border-top: none;
+		}
 	}
 	&__label {
 		@include mobile-body-medium;
@@ -47,8 +49,8 @@
 .button {
 	display: flex;
 	width: 90%;
-	padding: 40px;
-	// background-color: $light-grey;
+	margin-top: 30px;
+	background-color: $light-grey;
 
 	&__cancel {
 		height: 36px;

@@ -2,11 +2,22 @@
 @use '../../partials/colors' as *;
 
 .container {
-	display: flex;
-	justify-content: space-between;
-	width: 70%;
-	padding: 20px;
+	border: 2px solid black;
+	margin: 20px;
+	box-shadow: 10px 10px $light-grey;
+	&__edit {
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		padding: 20px;
+		@include tablet {
+			justify-content: flex-start;
+		}
+	}
 	&__title {
 		@include mobile-page-header;
+		@include tablet {
+			margin-left: 20px;
+		}
 	}
 }
