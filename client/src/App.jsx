@@ -1,8 +1,10 @@
 import "./App.css";
+import Header from "./components/Header/Header";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
         {/* <Route exact path="/" component={Warehouses} />
         <Route path="/details" component={WarehouseDetails} />
@@ -13,7 +15,6 @@ function App() {
         <Route path="/itemDetails" component={InventoryDetails} />
         <Route path="/editItem" component={EditInventory} />
         <Route path="/addItem" component={AddInventory} /> */}
-        <h1>Hello!</h1>
       </Switch>
     </BrowserRouter>
   );
