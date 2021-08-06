@@ -1,6 +1,7 @@
 import "../InventoryItemDetials/InventoryItemDetials.scss";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 import edit from "../../assets/Icons/edit-24px.svg";
+import Inventory from "../../pages/Inventory";
 
 function InventoryItemDetails() {
   return (
@@ -40,10 +41,6 @@ function InventoryItemDetails() {
               <p className="inv-det__qnt">500</p>
             </div>
           </div>
-
-          {/* WAREHOUSE */}
-          <h3 className="inv-det__ware-title">WAREHOUSE:</h3>
-          <p className="inv-det__ware">Manhattan</p>
         </section>
       </section>
     </div>
