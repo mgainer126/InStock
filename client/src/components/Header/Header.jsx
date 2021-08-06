@@ -1,7 +1,7 @@
 // import { Link } from react-router-dom;
 import "./Header.scss";
 import React from "react";
-import logo from "../../assets/images/Logo/InStock-Logo.svg";
+import logo from "../../assets/Logo/InStock-Logo.svg";
 function Header() {
   return (
     <div className="header">

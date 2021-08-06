@@ -1,0 +1,104 @@
+.inv-det {
+  width: 80%;
+  height: 365px;
+  margin: 1rem;
+  box-shadow: 0px 2px 5px rgb(19 24 44 / 10%);
+  padding: 1rem;
+  &__head {
+    display: flex;
+    border-bottom: #bdc5d5 1px solid;
+  }
+  &__editbtn {
+    margin-left: 5rem;
+  }
+
+  &__backarr {
+    margin-left: 1rem;
+  }
+  &__itm {
+    margin-left: 1rem;
+  }
+  &__title-des {
+    color: #5c667e;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Titillium Web;
+  }
+  &__des {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &__title-cat {
+    color: #5c667e;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Titillium Web;
+  }
+  &__cat {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &__stat-title {
+    color: #5c667e;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Titillium Web;
+  }
+  &__stat {
+    color: #158463;
+    border: solid black 1px;
+    background-color: lightgreen;
+    border-radius: 10px;
+    font-size: 11px;
+    padding: 0.3rem;
+  }
+
+  &__qnt-title {
+    color: #5c667e;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Titillium Web;
+  }
+  &__qnt {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &__qnt-grp {
+    margin-left: 6rem;
+  }
+  &__ware-title {
+    color: #5c667e;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: Titillium Web;
+  }
+  &__ware {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &__stat-qnt-alignment {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .body {
+    padding: 1rem;
+    border-right: #bdc5d5 1px solid;
+    margin-top: 1rem;
+  }
+  .stat-quality {
+    width: 17rem;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .main {
+    display: flex;
+  }
+  .inv-det {
+    &__editbtn {
+      margin-left: auto;
+      margin-right: 2rem;
+    }
+  }
+}
