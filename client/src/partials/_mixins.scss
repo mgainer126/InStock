@@ -7,108 +7,108 @@ $desktop: 1280px;
 
 //media query
 @mixin tablet {
-  @media (min-width: $tablet) {
-    @content;
-  }
+	@media (min-width: $tablet) {
+		@content;
+	}
 }
 
 @mixin desktop {
-  @media (min-width: $desktop) {
-    @content;
-  }
+	@media (min-width: $desktop) {
+		@content;
+	}
 }
 
 //mobile text styles
 @mixin mobile-page-header {
-  font-family: "TitilliumWeb-bold";
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 600;
+	font-family: "TitilliumWeb-bold";
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: 600;
 }
 
 @mixin mobile-subheader {
-  font-family: "TitilliumWeb-bold";
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 600;
+	font-family: "TitilliumWeb-bold";
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: 400;
 }
 
 //includes links
 @mixin mobile-labels-buttons {
-  font-family: "TitilliumWeb-regular";
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: 400;
 }
 
 @mixin mobile-body-large {
-  font-family: "TitilliumWeb-regular";
-  font-size: 15px;
-  line-height: 26px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 15px;
+	line-height: 26px;
+	font-weight: 400;
 }
 @mixin mobile-body-medium {
-  font-family: "TitilliumWeb-regular";
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: 400;
 }
 
 @mixin mobile-body-small {
-  font-family: "TitilliumWeb-regular";
-  font-size: 11px;
-  line-height: 16px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 11px;
+	line-height: 16px;
+	font-weight: 400;
 }
 
 //Desktop & Tablet Text Styles
 
 @mixin Page-header {
-  font-family: "TitilliumWeb-bold";
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 600;
+	font-family: "TitilliumWeb-bold";
+	font-size: 32px;
+	line-height: 40px;
+	font-weight: 600;
 }
 
 @mixin Subheader {
-  font-family: "TitilliumWeb-bold";
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
+	font-family: "TitilliumWeb-bold";
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 600;
 }
 
 //includes links
 @mixin labels-buttons {
-  font-family: "TitilliumWeb-regular";
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 400;
 }
 
 @mixin table-header {
-  font-family: "TitilliumWeb-regular";
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 400;
 }
 
 @mixin Body-large {
-  font-family: "TitilliumWeb-regular";
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 400;
 }
 
 @mixin Body-medium {
-  font-family: "TitilliumWeb-regular";
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 400;
 }
 
 @mixin Body-small {
-  font-family: "TitilliumWeb-regular";
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 400;
+	font-family: "TitilliumWeb-regular";
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 400;
 }

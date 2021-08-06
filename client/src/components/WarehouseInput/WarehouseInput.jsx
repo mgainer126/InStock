@@ -11,7 +11,7 @@ function WarehouseInput (props) {
     // }
     return (
         <div className="card">
-        <div> 
+        <div className="card__container"> 
                 <div className="form">
                  <h1 className="form__title">Warehouse Details</h1>
                 <form className="form__container"> 
@@ -29,7 +29,6 @@ function WarehouseInput (props) {
             <div className="form">
                 <h1 className="form__title">Contact Details</h1>
                 <form className="form__container"> 
-
                 <label className="form__label" htmlFor="name">Contact Name</label>
                     <input type="text" className="form__input-box"/>
                 <label className="form__label" htmlFor="name">Position</label>
@@ -38,15 +37,15 @@ function WarehouseInput (props) {
                     <input type="text" className="form__input-box"/>
                 <label className="form__label" htmlFor="name">Country</label>
                     <input type="text" className="form__input-box"/>
-
+               
 
                 <div className="button" >
                 <button className="button__cancel" type="submit">Cancel</button>
                 <button className="button__save" type="submit">{props.button}</button>
-                </div>
-
-                </form>  
+                </div>  
+                </form> 
             </div> 
+
             </div>  
             </div> 
     

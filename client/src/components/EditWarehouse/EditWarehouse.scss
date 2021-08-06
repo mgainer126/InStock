@@ -1,0 +1,12 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/colors' as *;
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+	padding: 20px;
+	&__title {
+		@include mobile-page-header;
+	}
+}
