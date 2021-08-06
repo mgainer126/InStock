@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react' 
 import './WarehouseInput.scss'
 
 
 function WarehouseInput (props) {
-    console.log(props)
+    // const [input, setinput] = useState ({
+    //     warehouseName: "",
+    // })
+    // updateInput (e){
+    //     setInput (warehouseName = e)
+    // }
     return (
-        <div>
+        <div className="card">
         <div> 
                 <div className="form">
                  <h1 className="form__title">Warehouse Details</h1>
@@ -37,7 +42,7 @@ function WarehouseInput (props) {
 
                 <div className="button" >
                 <button className="button__cancel" type="submit">Cancel</button>
-                {/* <button className="button__save" type="submit">{props.button}</button> */}
+                <button className="button__save" type="submit">{props.button}</button>
                 </div>
 
                 </form>  

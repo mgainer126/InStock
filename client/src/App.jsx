@@ -1,11 +1,14 @@
 import "./App.css";
-import WarehouseInput from './components/WarehouseInput/WarehouseInput'
+import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+
 
 function App() {
   return (
     <>
       <h1> Welcome to Instock</h1>
-      <WarehouseInput/> 
+      <EditWarehouse/>
+      {/* <AddWarehouse/> */}
     </>
   );
 }
