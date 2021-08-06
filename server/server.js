@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const PORT = 8081;
 const cors = require("cors");
-const warehousesRoute = require("./routes/warehouses");
-
+const warehouseRoutes = require("./routes/warehouses");
+const inventoryRoutes = require("./routes/inventories");
 app.use(cors());
 
 app.use(express.json());
@@ -20,8 +20,8 @@ app.use((req, _res, next) => {
   next();
 });
 
-app.use("/warehouses", warehousesRoute);
-
+app.use("/warehouses", warehouseRoutes);
+app.use("/inventories", inventoryRoutes);
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });

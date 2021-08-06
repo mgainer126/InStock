@@ -1,6 +1,7 @@
 import "./App.css";
 import InventoryList from "./components/InventoryList/InventoryList";
 import Footer from "./components/Footer/Footer";
+
 function App() {
   return (
     <>
