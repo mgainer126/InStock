@@ -1,11 +1,31 @@
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
 .header {
   background-color: #232940;
   margin: auto;
+  width: 100%;
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    height: 5.75rem;
+    @media (min-width: $tablet-width) {
+      padding: 0 2rem 0 2rem;
+    }
+  }
 
   &__logo {
     display: flex;
     justify-content: center;
     padding: 1rem;
+    @media (min-width: $tablet-width) {
+      align-items: center;
+    }
+    &--modifier {
+      @media (min-width: $tablet-width) {
+        height: 2rem;
+      }
+    }
   }
 
   &__links {
@@ -16,6 +36,24 @@
     width: 80%;
     font-size: 0.8125rem;
     color: white;
+    @media (min-width: $tablet-width) {
+      width: 30%;
+      margin: 0;
+      align-items: center;
+      padding-right: 1rem;
+      @media (min-width: $desktop-width) {
+        padding-right: 2rem;
+        width: 25%;
+      }
+    }
+
+    &--active:hover {
+      text-decoration: underline;
+    }
+
+    &--inactive:hover {
+      text-decoration: underline;
+    }
 
     &--active {
       background-color: #13182c;
