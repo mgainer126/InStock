@@ -8,4 +8,16 @@ router.get("", (req, res) => {
   res.status(200).json(inventories);
 });
 
+router.get("/:wareHouseId", (req, res) => {
+  const { wareHouseId } = req.params;
+  if (wareHouseId) {
+    const inventoriesFiltered = inventories.filter(
+      (inventory) => inventory.warehouseID === wareHouseId
+    );
+    res.status(200).json(inventoriesFiltered);
+  } else {
+    res.status(400).json({ message: "warehouseId is required" });
+  }
+});
+
 module.exports = router;
