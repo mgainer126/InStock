@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 const cors = require("cors");
-const warehousesRoute = require("./routes/warehousesRoute");
+const warehousesRoute = require("./routes/warehouses");
 
 app.use(cors());
 
