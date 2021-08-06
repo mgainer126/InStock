@@ -1,0 +1,15 @@
+.item {
+  list-style: none;
+  border: solid black 1px;
+  &__arrangement {
+    display: flex;
+  }
+  &__sub-arrangement {
+    margin: 1rem;
+  }
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+}
