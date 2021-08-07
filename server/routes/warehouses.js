@@ -5,8 +5,9 @@ const phoneUtil =
 const fs = require("fs");
 const dbWarehouses = "./data/warehouses.json";
 let warehouses = JSON.parse(fs.readFileSync(dbWarehouses, "utf8"));
+const path = require("path");
 
-router.post("", (req, res) => {
+router.post("/", (req, res) => {
   const { id, address, city, country, contact } = req.body;
   if (
     id &&
@@ -54,6 +55,22 @@ router.patch('/:id', (req, res) => {
   
 
   res.json(warehouse);
+});
+
+// Matts APIs
+const displayInventoryDetails = () => {
+  const inventoryDetailsData = fs.readFileSync(
+    path.resolve(__dirname, "../data/inventories.json")
+  );
+  const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
+  console.log(parsedInventoryDetails);
+  return parsedInventoryDetails;
+};
+
+router.get("/", (req, res) => {
+  const inventoryDetails = displayInventoryDetails();
+  res.json(inventoryDetails);
+  console.log(inventoryDetails);
 });
 
 module.exports = router;

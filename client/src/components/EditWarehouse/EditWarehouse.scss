@@ -1,23 +1,89 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/colors' as *;
 
-.container {
-	border: 2px solid black;
+// .container {
+// 	border: 2px solid black;
+// 	margin: 20px;
+// 	box-shadow: 10px 10px $light-grey;
+// 	&__edit {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		width: 70%;
+// 		padding: 20px;
+// 		@include tablet {
+// 			justify-content: flex-start;
+// 		}
+// 	}
+// 	&__title {
+// 		@include mobile-page-header;
+// 		@include tablet {
+// 			margin-left: 20px;
+// 		}
+// 	}
+// }
+
+.card {
+	background-color: $white;
 	margin: 20px;
-	box-shadow: 10px 10px $light-grey;
-	&__edit {
-		display: flex;
-		justify-content: space-between;
-		width: 70%;
-		padding: 20px;
+
+	&__container {
 		@include tablet {
-			justify-content: flex-start;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			border-top: 2px solid $Cloud;
 		}
 	}
+}
+
+.form {
+	&__container {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		padding: 20px;
+		// align-items: center;
+	}
+
 	&__title {
-		@include mobile-page-header;
+		border-top: 2px solid $Cloud;
+		padding: 20px;
+		padding-bottom: 10px;
+		@include mobile-subheader;
 		@include tablet {
-			margin-left: 20px;
+			border-top: none;
 		}
+	}
+	&__label {
+		@include mobile-body-medium;
+		padding-bottom: 10px;
+	}
+	&__input-box {
+		width: 295px;
+		height: 36px;
+		border-radius: 20px;
+		padding-top: 10px;
+	}
+}
+
+.button {
+	display: flex;
+	width: 90%;
+	margin-top: 30px;
+	background-color: $light-grey;
+
+	&__cancel {
+		height: 36px;
+		width: 139px;
+		border-radius: 20px;
+		background-color: $white;
+		margin-right: 20px;
+	}
+	&__save {
+		height: 36px;
+		width: 139px;
+		border-radius: 20px;
+		background-color: $In-stock-Indigo;
+		color: $white;
 	}
 }
