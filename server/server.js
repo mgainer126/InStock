@@ -7,6 +7,7 @@ const inventoryRoutes = require("./routes/inventories");
 app.use(cors());
 
 app.use(express.json());
+app.use("/warehouse", warehouseRoutes);
 
 //This below makes the pages in the public folder accessabile
 //by the browser. In this example there is a HTML document
