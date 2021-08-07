@@ -1,8 +1,8 @@
 //Passing Props to Warehouse Input for title and button text 
-import WarehouseInput from '../WarehouseInput/WarehouseInput';
 import './EditWarehouse.scss'
 import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import React from 'react';
+import axios from 'axios';
 
 
 class EditWarehouse extends React.Component {
@@ -17,27 +17,27 @@ class EditWarehouse extends React.Component {
       contactPhone: "",
       contactEmail: "",
     };
-
+    
 //   coming from getting single warehouse from backend (waiting for backend next ticket)
-    // componentDidMount() {
-    //   axios
-    //     .get(`/warehouse/${this.props.match.params.id}`)
-    //     .then((response) => {
-    //       this.setState({
-    //         name: response.data.name,
-    //         address: response.data.address,
-    //         city: response.data.city,
-    //         country: response.data.country,
-    //         contactName: response.data.contactName,
-    //         contactPosition: response.data.contactPosition,
-    //         contactPhone: response.data.contactPhone,
-    //         contactEmail: response.data.contactEmail
-    //       });
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // }
+    componentDidMount() {
+      axios
+        .get(`/warehouse/`)
+        .then((response) => {
+          this.setState({
+            name: response.data.name,
+            address: response.data.address,
+            city: response.data.city,
+            country: response.data.country,
+            contactName: response.data.contactName,
+            contactPosition: response.data.contactPosition,
+            contactPhone: response.data.contactPhone,
+            contactEmail: response.data.contactEmail
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   
     handleChange = (event) => {
       this.setState({
@@ -52,7 +52,7 @@ class EditWarehouse extends React.Component {
       });
     };
   
-    handleSubmit = (event) => {
+    handleClick = (event) => {
       event.preventDefault();
       const updatedWareHouse = {
         //must match state properties 
@@ -65,35 +65,34 @@ class EditWarehouse extends React.Component {
         contactPhone: this.state.contactPhone,
         contactEmail: this.state.contactEmail
       };
-    //   axios
-    //     .patch(`/warehouse/${this.props.match.params.id}`, updatedWareHouse)
-    //     .then((response) => {
-    //       this.setState({
-    //         name: response.data.name,
-    //         address: response.data.address,
-    //       });
-    //       this.props.history.push("/");
-    //     })
-    //     .catch((err) => {
-    //     //   console.log(err);
-    //     });
+      axios
+        .patch(`/warehouse/`, updatedWareHouse)
+        .then((response) => {
+          this.setState({
+            name: response.data.name,
+            address: response.data.address,
+          });
+          this.props.history.push("/");
+        })
+        .catch((err) => {
+        //   console.log(err);
+        });
     };
   
     render() {
       return (
           // <div className="container">
         //     <div className="container__edit">
-        //     <img src={backArrow}/>
-        //     <h1 className="container__title">Edit Warehouse</h1>
         //     </div>
         //     <WarehouseInput button={"Save"} operation={"Edit"}/> 
         // </div>
         <div className="card">
-        <div className="card__container"> 
+        <img src={backArrow}/>
+        <h1 className="container__title">Edit Warehouse</h1>
         <div>
                 <div className="form">
                  <h1 className="form__title">Warehouse Details</h1>
-                <form onSubmit={this.handleSubmit} className="form__container"> 
+                <form className="form__container"> 
                 <label className="form__label" htmlFor="name">Warehouse Name</label>
                     <input defaultValue={this.state.name} onChange={this.handleChange}type="text" className="form__input-box"/>
                 <label className="form__label" htmlFor="name">Street Address</label>
@@ -122,10 +121,9 @@ class EditWarehouse extends React.Component {
             </div>
                 <div className="button" >
                 <button className="button__cancel" type="submit">Cancel</button>
-                <button className="button__save" type="submit"></button>
+                <button onClick={this.handleClick} className="button__save" type="submit">Save</button>
                 </div>  
             </div>  
-            </div> 
       );
     }
   }
