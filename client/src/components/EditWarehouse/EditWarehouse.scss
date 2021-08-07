@@ -1,12 +1,30 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/colors' as *;
+// /make center
 
+//1. margin-left-auto; margin-right:auto;
+//2. display:flex; justify-content:center; or align-items:center;
+//3. It only works with text: text-align:center;
+
+//justify-content and align-items
+//justify-content
+//  default: left and right
+//  flex-direction: column (it goes up and down)
+//align-items
+// default: up and down
+// flex-direction: column (it goes left and right)
+
+//center the text up and down and left and right
+//justify-content: center and align-items:center;
+.background {
+	background-color: blue;
+}
 .card {
 	background-color: $white;
 	margin: 20px;
-	border: 2px solid black;
-	position: absolute;
-	top: 136px;
+	border: 2px solid $light-grey;
+	position: relative;
+	top: -25px;
 	left: 16px;
 	border-radius: 3px;
 	// @include tablet {
@@ -50,8 +68,6 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		padding: 20px;
-		// align-items: center;
 	}
 
 	&__title {
