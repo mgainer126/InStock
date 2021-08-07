@@ -1,27 +1,6 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/colors' as *;
 
-// .container {
-//
-// 	margin: 20px;
-// 	box-shadow: 10px 10px $light-grey;
-// 	&__edit {
-// 		display: flex;
-// 		justify-content: space-between;
-// 		width: 70%;
-// 		padding: 20px;
-// 		@include tablet {
-// 			justify-content: flex-start;
-// 		}
-// 	}
-// 	&__title {
-// 		@include mobile-page-header;
-// 		@include tablet {
-// 			margin-left: 20px;
-// 		}
-// 	}
-// }
-
 .card {
 	background-color: $white;
 	margin: 20px;
@@ -29,9 +8,29 @@
 	position: absolute;
 	top: 136px;
 	left: 16px;
-	bottom: 0px;
 	border-radius: 3px;
-	height: 100%;
+	// @include tablet {
+	// 	justify-content: flex-start;
+	// }
+	@include tablet {
+		height: 612px;
+		width: 704px;
+		// left: 32px;
+		// top: 92px;
+	}
+
+	&__edit {
+		display: flex;
+		justify-content: center;
+		width: 75%;
+		padding: 20px;
+	}
+	&__title {
+		@include mobile-page-header;
+		@include tablet {
+			margin-left: 20px;
+		}
+	}
 
 	// &__container {
 	// 	@include tablet {
@@ -44,6 +43,9 @@
 }
 
 .form {
+	@include tablet {
+		display: flex;
+	}
 	&__container {
 		display: flex;
 		justify-content: center;
@@ -78,6 +80,10 @@
 	width: 90%;
 	margin-top: 30px;
 	background-color: $light-grey;
+	padding-left: 20px;
+	padding-top: 20px;
+	width: 343px;
+	height: 68px;
 
 	&__cancel {
 		height: 36px;

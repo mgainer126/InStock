@@ -87,8 +87,10 @@ class EditWarehouse extends React.Component {
         //     <WarehouseInput button={"Save"} operation={"Edit"}/> 
         // </div>
         <div className="card">
-        <img src={backArrow}/>
-        <h1 className="container__title">Edit Warehouse</h1>
+        <div className="card__edit">
+        <img className="card__arrow"src={backArrow}/>
+        <h1 className="card__title">Edit Warehouse</h1>
+        </div>
         <div>
                 <div className="form">
                  <h1 className="form__title">Warehouse Details</h1>
