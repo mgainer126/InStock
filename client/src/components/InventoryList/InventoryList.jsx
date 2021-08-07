@@ -1,7 +1,7 @@
 import "../InventoryList/InventoryList.scss";
 import search from "../../assets/Icons/search-24px.svg";
 import Inventory from "../../pages/Inventory";
-
+import sort from "../../assets/Icons/sort-24px.svg";
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -41,11 +41,22 @@ export default class InventoryList extends Component {
               </form>
             </section>
             <ul className="filter">
-              <li className="filter__item">INVENTORY ITEM</li>
-              <li className="filter__category">CATEGORY</li>
-              <li className="filter__status">STATUS</li>
-              <li className="filter__qty">QTY</li>
-              <li className="filter__warehouse">WAREHOUSE</li>
+              <li className="filter__item">
+                INVENTORY ITEM{" "}
+                <img src={sort} alt="sort" className="filter__sort" />
+              </li>
+              <li className="filter__category">
+                CATEGORY <img src={sort} alt="sort" className="filter__sort" />
+              </li>
+              <li className="filter__status">
+                STATUS <img src={sort} alt="sort" className="filter__sort" />
+              </li>
+              <li className="filter__qty">
+                QTY <img src={sort} alt="sort" className="filter__sort" />
+              </li>
+              <li className="filter__warehouse">
+                WAREHOUSE <img src={sort} alt="sort" className="filter__sort" />
+              </li>
               <li className="filter__actions">ACTIONS</li>
             </ul>
             <Inventory inventoryarr={this.state.inventoryList} />
