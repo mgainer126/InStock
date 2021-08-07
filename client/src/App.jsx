@@ -1,10 +1,10 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import InventoryList from "./components/InventoryList/InventoryList";
-import InventoryItemDetails from "./components/InventoryItemDetials/InventoryItemDetials";
+import InventoryList from "../src/pages/InventoryList/InventoryList";
+import ItemDetail from "../src/pages/ItemDetail/ItemDetail";
 import WharehouseDetails from "./components/WarehouseDetials/WarehouseDetails";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
@@ -16,7 +16,7 @@ function App() {
         <Route path="/add" component={AddWarehouse} /> */}
 
         <Route path="/inventory" component={InventoryList} />
-        <Route path="/itemDetails" component={InventoryItemDetails} />
+        <Route path="/itemDetails" component={ItemDetail} />
         {/* <Route path="/editItem" component={EditInventory} />
         <Route path="/addItem" component={AddInventory} /> */}
       </Switch>

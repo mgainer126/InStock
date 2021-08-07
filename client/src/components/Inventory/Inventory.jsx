@@ -1,8 +1,9 @@
-import trash from "../assets/Icons/delete_outline-24px.svg";
-import edit from "../assets/Icons/edit-24px.svg";
-import "../pages/Inventory.scss";
+import trash from "../../assets/Icons/delete_outline-24px.svg";
+import edit from "../../assets/Icons/edit-24px.svg";
+import "../Inventory/Inventory.scss";
+import { Link } from "react-router-dom";
 
-function Inventory({ inventoryarr }) {
+function Inventory({ inventoryarr, clickhandle }) {
   console.log(inventoryarr);
   return inventoryarr.map((item) => {
     return (
@@ -12,7 +13,13 @@ function Inventory({ inventoryarr }) {
             <section className="item__sub-arrangement">
               <div>
                 <h4>INVENTORY ITEM</h4>
-                <li className="item__item">{item.itemName + " " + " > "}</li>
+                <div onClick={() => clickhandle(item)}>
+                  <Link to={`/itemDetails/${item.id}`}>
+                    <li className="item__item">
+                      {item.itemName + " " + " > "}
+                    </li>
+                  </Link>
+                </div>
               </div>
               <div>
                 <h4>CATEGORY</h4>

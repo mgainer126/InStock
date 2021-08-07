@@ -1,7 +1,6 @@
 import "../InventoryItemDetials/InventoryItemDetials.scss";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 import edit from "../../assets/Icons/edit-24px.svg";
-import Inventory from "../../pages/Inventory";
 
 function InventoryItemDetails() {
   return (
