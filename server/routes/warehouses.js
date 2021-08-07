@@ -48,12 +48,21 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 router.patch('/:id', (req, res) => {
-  const warehouse = dbWarehouses.find(warehouse=> warehouse.id === parseInt(req.params.id));
+  const warehouse = warehouses.find(warehouse=> warehouse.id === req.params.id);
   if (!warehouse) return res.status(404).json({ message: 'Not Found' });
 
+  //do all for the rest of the inputs 
   warehouse.name = req.body.name;
-  
+  warehouse.address = req.body.address;
+  warehouse.city = req.body.city;
+  warehouse.country = req.body.country;
+  warehouse.contact.name = req.body.contactName;
+  warehouse.contact.position = req.body.contactPosition;
+  warehouse.contact.phone = req.body.contactPhone;
+  warehouse.contact.email = req.body.contactEmail;
 
+  console.log(req.params.id)
+  fs.writeFileSync("./data/warehouse.json", JSON.stringify(warehouse));
   res.json(warehouse);
 });
 
