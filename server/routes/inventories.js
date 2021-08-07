@@ -20,4 +20,13 @@ router.get("/:wareHouseId", (req, res) => {
   }
 });
 
+router.delete("/:inventoryId", (req, res) => {
+  const { inventoryId } = req.params;
+  const inventoriesFiltered = inventories.filter(
+    (inventory) => inventory.id !== inventoryId
+  );
+  fs.writeFileSync(dbInventories, JSON.stringify(inventoriesFiltered));
+  res.status(200).json(inventoriesFiltered);
+});
+
 module.exports = router;
