@@ -66,6 +66,17 @@ router.patch('/:id', (req, res) => {
   res.json(warehouse);
 });
 
+const warehousedetails = () => {
+  const warehouse = fs.readFileSync("./data/warehouse.json");
+  const parsedWarehouseData = JSON.parse(warehouse);
+  return parsedWarehouseData;
+}
+router.get("/", (req, res) => {
+  const warehouse = warehousedetails();
+  console.log("warehouse")
+  res.json(warehouse);
+});
+
 // Matts APIs
 const displayInventoryDetails = () => {
   const inventoryDetailsData = fs.readFileSync(
