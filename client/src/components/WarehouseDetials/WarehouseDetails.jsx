@@ -2,6 +2,7 @@ import "../WarehouseDetials/WarehouseDetails.scss";
 import back from "../../assets/Icons/arrow_back-24px.svg";
 import edit from "../../assets/Icons/edit-24px.svg";
 import trash from "../../assets/Icons/delete_outline-24px.svg";
+import { Link } from "react-router-dom";
 
 function WharehouseDetails() {
   return (
@@ -10,7 +11,9 @@ function WharehouseDetails() {
         <div className="info__wharehouse-head">
           <img className="info__back-btn" src={back} alt="back button"></img>
           <h3 className="info__warehouse-loc">King West</h3>
-          <img className="info__edit-btn" src={edit} alt="edit"></img>
+          <Link>
+            <img className="info__edit-btn" src={edit} alt="edit"></img>
+          </Link>
         </div>
         <div className="tablet__alignment">
           <address className="info__address">
