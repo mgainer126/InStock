@@ -12,7 +12,7 @@ export default class InventoryList extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8081/warehouses").then((res) => {
+    axios.get("http://localhost:8081/inventories").then((res) => {
       console.log(res.data);
       this.setState({
         inventoryList: res.data,
@@ -28,7 +28,6 @@ export default class InventoryList extends Component {
   };
 
   render() {
-    console.log(this.state.inventoryList);
     return (
       <div>
         {this.state.inventoryList && this.state.inventoryList && (

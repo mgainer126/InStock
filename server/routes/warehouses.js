@@ -48,20 +48,20 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 
-// Matts APIs
-const displayInventoryDetails = () => {
-  const inventoryDetailsData = fs.readFileSync(
-    path.resolve(__dirname, "../data/inventories.json")
-  );
-  const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
-  console.log(parsedInventoryDetails);
-  return parsedInventoryDetails;
-};
+// // Matts APIs
+// const displayInventoryDetails = () => {
+//   const inventoryDetailsData = fs.readFileSync(
+//     path.resolve(__dirname, "../data/inventories.json")
+//   );
+//   const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
+//   console.log(parsedInventoryDetails);
+//   return parsedInventoryDetails;
+// };
 
-router.get("/", (req, res) => {
-  const inventoryDetails = displayInventoryDetails();
-  res.json(inventoryDetails);
-  console.log(inventoryDetails);
-});
+// router.get("/", (req, res) => {
+//   const inventoryDetails = displayInventoryDetails();
+//   res.json(inventoryDetails);
+//   console.log(inventoryDetails);
+// });
 
 module.exports = router;
