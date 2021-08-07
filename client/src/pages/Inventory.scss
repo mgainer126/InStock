@@ -1,10 +1,13 @@
-$tablet-margin-list: 2rem;
-
+@use './../partials/mixins' as *;
+.tablet {
+  display: none;
+}
 .item {
   list-style: none;
   border: solid #bdc5d5 1px;
   padding: 0;
   font-size: 13px;
+  
   &__arrangement {
     display: flex;
     justify-content: center;
@@ -49,7 +52,37 @@ $tablet-margin-list: 2rem;
     }
   }
 }
-
+@include tablet {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    &__body {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 1rem;
+      width: 100%;
+      border-bottom: 1px solid #BDC5D5;
+      p {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+      div {
+        display: flex;
+        width: initial;
+        margin: 0;
+        justify-content: space-between;
+        img {
+          width: 36px;
+        }
+      }
+    }
+  }
+}
 h4 {
   height: 16px;
   width: 150px;

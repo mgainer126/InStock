@@ -47,6 +47,14 @@ export default class InventoryList extends Component {
               <li className="filter__warehouse">WAREHOUSE</li>
               <li className="filter__actions">ACTIONS</li>
             </ul>
+            <div className="tablet-header">
+              <p>INVENTORY ITEM</p>
+              <p>CATEGORY</p>
+              <p>STATUS</p>
+              <p>QTY</p>
+              <p>WAREHOUSE</p>
+              <p>ACTIONS</p>
+            </div>
             <Inventory inventoryarr={this.state.inventoryList} />
             {/* INVENTORY ITEMS */}
           </div>

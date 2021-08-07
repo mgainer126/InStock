@@ -5,12 +5,31 @@ import "../pages/Inventory.scss";
 function Inventory({ inventoryarr }) {
   console.log(inventoryarr);
   const InStock = ({ inStock }) => (
-    <li className={`item_status ${inStock === 'In Stock' ? "itemstatus--in-stock" : "item_status--out-stock"}`}>{inStock}</li>
+    <li
+      className={`item__status ${
+        inStock === "In Stock"
+          ? "item__status--in-stock"
+          : "item__status--out-stock"
+      }`}
+    >
+      {inStock}
+    </li>
+  );
+  const InStockTable = ({ inStock }) => (
+    <p
+      className={`item__status ${
+        inStock === "In Stock"
+          ? "item__status--in-stock"
+          : "item__status--out-stock"
+      }`}
+    >
+      {inStock}
+    </p>
   );
   return inventoryarr.map((item) => {
     return (
       <div key={item.id}>
-        <ul className="item">
+        <ul className="item mobile">
           <div className="item__arrangement">
             <section className="item__sub-arrangement">
               <div>
@@ -25,7 +44,7 @@ function Inventory({ inventoryarr }) {
             <section className="item__sub-arrangement">
               <div>
                 <h4>STATUS</h4>
-                <InStock inStock={item.status }></InStock>
+                <InStock inStock={item.status}></InStock>
               </div>
               <div>
                 <h4>QTY</h4>
@@ -42,6 +61,19 @@ function Inventory({ inventoryarr }) {
             <img src={edit} alt="edit"></img>
           </div>
         </ul>
+        <div className="tablet">
+          <div className="tablet__body">
+            <p className="item__item">{`${item.itemName} >`}</p>
+            <p className="item__category">{item.category}</p>
+            <InStockTable inStock={item.status}></InStockTable>
+            <p className="item__qty">{item.quantity}</p>
+            <p className="item__warehouse">{item.warehouseName}</p>
+            <div className="item__action">
+              <img src={trash} alt="trash"></img>
+              <img src={edit} alt="edit"></img>
+            </div>
+          </div>
+        </div>
       </div>
     );
   });
