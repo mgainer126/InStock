@@ -1,9 +1,8 @@
-import "../InventoryList/InventoryList.scss";
-import search from "../../assets/Icons/search-24px.svg";
-import Inventory from "../../pages/Inventory";
-
-import React, { Component } from "react";
 import axios from "axios";
+import React, { Component } from "react";
+import { API_URL } from "../../api/config";
+import Inventory from "../../pages/Inventory";
+import "../InventoryList/InventoryList.scss";
 
 // function InventoryList() {
 export default class InventoryList extends Component {
@@ -12,7 +11,7 @@ export default class InventoryList extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8081/warehouses").then((res) => {
+    axios.get(`${API_URL}/inventories`).then((res) => {
       console.log(res.data);
       this.setState({
         inventoryList: res.data,

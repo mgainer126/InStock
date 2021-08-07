@@ -4,37 +4,35 @@ import "../pages/Inventory.scss";
 
 function Inventory({ inventoryarr }) {
   console.log(inventoryarr);
+  const InStock = ({ inStock }) => (
+    <li className={`item_status ${inStock === 'In Stock' ? "itemstatus--in-stock" : "item_status--out-stock"}`}>{inStock}</li>
+  );
   return inventoryarr.map((item) => {
     return (
-      <div>
+      <div key={item.id}>
         <ul className="item">
           <div className="item__arrangement">
             <section className="item__sub-arrangement">
               <div>
                 <h4>INVENTORY ITEM</h4>
-                {/* {item.itemName + " " + " > "} */}
-                <li className="item__item">{item.itemName + " " + " > "}</li>
+                <li className="item__item">{`${item.itemName} >`}</li>
               </div>
               <div>
                 <h4>CATEGORY</h4>
-                {/* {item.category} */}
                 <li className="item__category">{item.category}</li>
               </div>
             </section>
             <section className="item__sub-arrangement">
               <div>
                 <h4>STATUS</h4>
-                {/* {item.status} */}
-                <li className="item__status">{item.status}</li>
+                <InStock inStock={item.status }></InStock>
               </div>
               <div>
-                <h4>QUANTITY</h4>
-                {/* {item.quantity} */}
+                <h4>QTY</h4>
                 <li className="item__qty">{item.quantity}</li>
               </div>
               <div>
                 <h4>WAREHOUSE</h4>
-                {/* {item.warehouseName} */}
                 <li className="item__warehouse">{item.warehouseName}</li>
               </div>
             </section>

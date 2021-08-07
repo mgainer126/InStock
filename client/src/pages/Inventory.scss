@@ -27,6 +27,25 @@
     letter-spacing: 0em;
     text-align: left;
   }
+  &__status {
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: fit-content;
+    &--in-stock {
+      color: #158463;
+      background: rgba(21, 132, 99, 0.07);
+    }
+    &--out-stock {
+      color: #c94515;
+      background: rgba(201, 69, 21, 0.07);
+    }
+  }
 }
 
 h4 {
