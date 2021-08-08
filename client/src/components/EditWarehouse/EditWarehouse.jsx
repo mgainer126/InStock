@@ -3,10 +3,13 @@ import "./EditWarehouse.scss";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class EditWarehouse extends React.Component {
 	//setting state for input felids
 	state = {
+		warehouseDetails: [],
+		id: "",
 		name: "",
 		address: "",
 		city: "",
@@ -20,17 +23,20 @@ class EditWarehouse extends React.Component {
 	//   coming from getting single warehouse from backend (waiting for backend next ticket)
 	componentDidMount() {
 		axios
-			.get(`/warehouse/`)
+			.get(`http://localhost:8081/warehouses`)
 			.then((response) => {
+				console.log(response.data);
 				this.setState({
-					name: response.data.name,
-					address: response.data.address,
-					city: response.data.city,
-					country: response.data.country,
-					contactName: response.data.contactName,
-					contactPosition: response.data.contactPosition,
-					contactPhone: response.data.contactPhone,
-					contactEmail: response.data.contactEmail,
+					warehouseDetails: response.data,
+					id: response.data[0].id,
+					name: response.data[0].name,
+					address: response.data[0].address,
+					city: response.data[0].city,
+					country: response.data[0].country,
+					contactName: response.data[0].contact.name,
+					contactPosition: response.data[0].contact.position,
+					contactPhone: response.data[0].contact.phone,
+					contactEmail: response.data[0].contact.email,
 				});
 			})
 			.catch((err) => {
@@ -53,6 +59,8 @@ class EditWarehouse extends React.Component {
 
 	handleClick = (event) => {
 		event.preventDefault();
+		debugger;
+		console.log(this.state.id);
 		const updatedWareHouse = {
 			//must match state properties
 			name: this.state.name,
@@ -64,27 +72,35 @@ class EditWarehouse extends React.Component {
 			contactPhone: this.state.contactPhone,
 			contactEmail: this.state.contactEmail,
 		};
+		console.log(updatedWareHouse);
 		axios
-			.patch(`/warehouse/`, updatedWareHouse)
+			.patch(
+				`http://localhost:8081/warehouses/${this.state.id}`,
+				updatedWareHouse
+			)
 			.then((response) => {
+				console.log(response.data);
 				this.setState({
 					name: response.data.name,
 					address: response.data.address,
+					city: response.data.city,
+					country: response.data.country,
+					contactName: response.data.contactName,
+					contactPosition: response.data.contactPosition,
+					contactPhone: response.data.contactPhone,
+					contactEmail: response.data.contactEmail,
 				});
 				this.props.history.push("/");
 			})
 			.catch((err) => {
-				//   console.log(err);
+				console.log(err);
 			});
 	};
 
 	render() {
+		console.log(this.state.name);
+		console.log(this.state.contactName);
 		return (
-			// <div className="container">
-			//     <div className="container__edit">
-			//     </div>
-			//     <WarehouseInput button={"Save"} operation={"Edit"}/>
-			// </div>
 			<div className="card">
 				<div className="card__edit">
 					<img className="card__arrow" src={backArrow} />
@@ -93,15 +109,16 @@ class EditWarehouse extends React.Component {
 				<div>
 					<div className="form">
 						<h1 className="form__title">Warehouse Details</h1>
-						<form className="form__container">
+						<form className="form__container" onSubmit={this.handleClick}>
 							<label className="form__label" htmlFor="name">
 								Warehouse Name
 							</label>
 							<input
 								defaultValue={this.state.name}
 								onChange={this.handleChange}
-								type="text"
 								className="form__input-box"
+								id="name"
+								name="name"
 							/>
 							<label className="form__label" htmlFor="name">
 								Street Address
@@ -111,6 +128,8 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="address"
+								name="address"
 							/>
 							<label className="form__label" htmlFor="name">
 								City
@@ -120,6 +139,8 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="city"
+								name="city"
 							/>
 							<label className="form__label" htmlFor="name">
 								Country
@@ -129,6 +150,8 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="country"
+								name="country"
 							/>
 						</form>
 					</div>
@@ -144,6 +167,8 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="contactName"
+								name="contactName"
 							/>
 							<label className="form__label" htmlFor="name">
 								Position
@@ -153,6 +178,8 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="contactPosition"
+								name="contactPosition"
 							/>
 							<label className="form__label" htmlFor="name">
 								Phone Number
@@ -162,6 +189,8 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="contactPhone"
+								name="contactPhone"
 							/>
 							<label className="form__label" htmlFor="name">
 								Email
@@ -171,18 +200,23 @@ class EditWarehouse extends React.Component {
 								onChange={this.handleChange}
 								type="text"
 								className="form__input-box"
+								id="contactEmail"
+								name="contactEmail"
 							/>
 							<div className="button">
 								<button className="button__cancel" type="submit">
 									Cancel
 								</button>
-								<button
-									onClick={this.handleClick}
-									className="button__save"
-									type="submit"
-								>
-									Save
-								</button>
+								<Link to="/warehouse">
+									<button
+										onClick={this.handleClick}
+										onChange={this.handleChange}
+										className="button__save"
+										type="submit"
+									>
+										Save
+									</button>
+								</Link>
 							</div>
 						</form>
 					</div>
