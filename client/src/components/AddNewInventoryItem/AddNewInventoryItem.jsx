@@ -19,14 +19,19 @@ class AddNewInventoryItem extends React.Component {
 									Item Name
 								</label>
 								<input type="name" className="form__input-box" />
-								<label className="form__label--description" htmlFor="name">
+								<label className="form__label" htmlFor="name">
 									Description
 								</label>
-								<input type="text" className="form__input-box" />
+								<input type="text" className="form__input-box--description" />
 								<label className="form__label" htmlFor="name">
 									Category
 								</label>
-							</form>
+								<select className="form__input-box" />
+								<option value="Please Select">Please Select</option>
+								<option value="Please Select">Manhattan</option>
+                                
+						
+                           
 						</div>
 
 						<div className="form">
@@ -35,8 +40,16 @@ class AddNewInventoryItem extends React.Component {
 								<label className="form__label" htmlFor="name">
 									Status
 								</label>
-								<input type="text" className="form__input-box-status" />
-								<input type="text" className="form__input-box" />
+								<div className="status__wrapper">
+									<div>
+										<input type="text" className="form__input-box--status" />
+										Instock
+									</div>
+									<div>
+										<input type="text" className="form__input-box--status" />{" "}
+										Out of stock
+									</div>
+								</div>
 								<label className="form__label" htmlFor="name">
 									Quantity
 								</label>
@@ -53,7 +66,7 @@ class AddNewInventoryItem extends React.Component {
 							Cancel
 						</button>
 
-						<button className="button__save" type="submit">
+						<button className="button__add-item" type="submit">
 							Add Item
 						</button>
 					</div>

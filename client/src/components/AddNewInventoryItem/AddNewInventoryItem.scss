@@ -10,6 +10,9 @@
 	left: 16px;
 	border-radius: 3px;
 	width: 90%;
+	height: 874px;
+	width: 343px;
+
 	@include tablet {
 		height: 612px;
 		width: 704px;
@@ -69,7 +72,7 @@
 		}
 	}
 	&__label {
-		@include mobile-body-medium;
+		@include mobile-body-large;
 		padding-bottom: 10px;
 	}
 	&__input-box {
@@ -78,19 +81,26 @@
 		left: 40px;
 		top: 357px;
 		border-radius: 20px;
-		//modifer on description input box
+
 		&--description {
 			width: 295px;
 			height: 120px;
+			left: 40px;
+			top: 433px;
+			border-radius: 20px;
 		}
-		// &__input-box-status {
-		// 	background: red;
+		&--status {
+			height: 16px;
+			width: 16px;
+			left: 40px;
+			top: 748px;
+			border-radius: 20px;
+		}
+		//dropdown icon category and warehouse input
+		// &--dropdown {
+		// 	background-image: url("../../assets/Icons/arrow_drop_down-24px.svg");
 		// }
-		// width: 18.4375rem;
-		// height: 1.875rem;
-		// border-radius: 20px;
-		// padding-top: 10px;
-		// padding: 10px;
+
 		@include Body-medium;
 		@include tablet {
 			height: 2.375rem;
@@ -103,6 +113,13 @@
 			// border-color: $light-grey;
 		}
 	}
+}
+
+.status__wrapper {
+	display: flex;
+	justify-content: flex-start;
+	justify-content: space-between;
+	@include mobile-body-medium;
 }
 
 .button {
@@ -133,7 +150,7 @@
 			top: 650px;
 		}
 	}
-	&__save {
+	&__add-item {
 		height: 36px;
 		width: 139px;
 		border-radius: 20px;
