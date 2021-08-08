@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import InventoryList from "../src/pages/InventoryList/InventoryList";
 import ItemDetail from "../src/pages/ItemDetail/ItemDetail";
 import WharehouseDetails from "./components/WarehouseDetials/WarehouseDetails";
+import AddInventoryItem from "../src/pages/AddInventoryItem/AddInventoryItem";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
 
         <Route path="/inventory" component={InventoryList} />
         <Route path="/itemDetails/:id" component={ItemDetail} />
-        {/* <Route path="/editItem" component={EditInventory} />
-        <Route path="/addItem" component={AddInventory} /> */}
+        {/* <Route path="/editItem" component={EditInventory} /> */}
+        <Route path="/addItem" component={AddInventoryItem} />
       </Switch>
       <Footer />
     </BrowserRouter>

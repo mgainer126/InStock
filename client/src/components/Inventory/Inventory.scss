@@ -1,4 +1,13 @@
 $tablet-margin-list: 2rem;
+body {
+  /* White */
+
+  background: #ffffff;
+  /* Card Shadow */
+
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+}
 
 .item {
   list-style: none;
@@ -36,7 +45,9 @@ h4 {
   width: 150px;
   left: 40px;
   top: 349px;
-  color: #5c667e;
+  color: #13182c;
+  margin-right: auto;
+  margin-left: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {

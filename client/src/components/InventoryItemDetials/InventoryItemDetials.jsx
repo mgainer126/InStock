@@ -1,6 +1,7 @@
 import "../InventoryItemDetials/InventoryItemDetials.scss";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 import edit from "../../assets/Icons/edit-24px.svg";
+import { Link } from "react-router-dom";
 
 function InventoryItemDetails({ foundItem }) {
   console.log(foundItem);
@@ -9,11 +10,13 @@ function InventoryItemDetails({ foundItem }) {
     <div className="inv-det">
       {/* Header */}
       <section className="inv-det__head">
-        <img
-          src={arrowBack}
-          alt="back arrow"
-          className="inv-    margin-left: 10rem;"
-        ></img>
+        <Link to={"/inventory"}>
+          <img
+            src={arrowBack}
+            alt="back arrow"
+            className="inv-    margin-left: 10rem;"
+          ></img>
+        </Link>
         <h2 className="inv-det__itm">{foundItem.itemName}</h2>
         <img src={edit} alt="edit btn" className="inv-det__editbtn"></img>
       </section>
