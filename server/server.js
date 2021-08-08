@@ -8,9 +8,6 @@ app.use(cors());
 
 app.use(express.json());
 
-//Betty - access to a single warehouse
-// app.use("/warehouses", warehouseRoutes);
-
 //This below makes the pages in the public folder accessabile
 //by the browser. In this example there is a HTML document
 //that when you put localhost:8080 the html website serves up

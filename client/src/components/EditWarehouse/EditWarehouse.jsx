@@ -102,7 +102,7 @@ class EditWarehouse extends React.Component {
 					<img className="card__arrow" src={backArrow} />
 					<h1 className="card__title">Edit Warehouse</h1>
 				</div>
-				<div>
+				<div className="form-wrapper">
 					<div className="form">
 						<h1 className="form__title">Warehouse Details</h1>
 						<form className="form__container" onSubmit={this.handleClick}>
@@ -199,23 +199,23 @@ class EditWarehouse extends React.Component {
 								id="contactEmail"
 								name="contactEmail"
 							/>
-							<div className="button">
-								<button className="button__cancel" type="submit">
-									Cancel
-								</button>
-								<Link to="/warehouse">
-									<button
-										onClick={this.handleClick}
-										onChange={this.handleChange}
-										className="button__save"
-										type="submit"
-									>
-										Save
-									</button>
-								</Link>
-							</div>
 						</form>
 					</div>
+				</div>
+				<div className="button">
+					<button className="button__cancel" type="submit">
+						Cancel
+					</button>
+					<Link to="/warehouse">
+						<button
+							onClick={this.handleClick}
+							onChange={this.handleChange}
+							className="button__save"
+							type="submit"
+						>
+							Save
+						</button>
+					</Link>
 				</div>
 			</div>
 		);

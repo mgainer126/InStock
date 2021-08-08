@@ -25,14 +25,15 @@
 	top: -25px;
 	left: 16px;
 	border-radius: 3px;
-	// @include tablet {
-	// 	justify-content: flex-start;
-	// }
+	width: 90%;
 	@include tablet {
 		height: 612px;
 		width: 704px;
-		// left: 32px;
-		// top: 92px;
+	}
+	@include desktop {
+		height: 612px;
+		width: 1020px;
+		top: -30px;
 	}
 
 	&__edit {
@@ -40,6 +41,12 @@
 		justify-content: center;
 		width: 75%;
 		padding: 20px;
+		@include tablet {
+			display: flex;
+			justify-content: flex-start;
+			border-bottom: 1px solid $Cloud;
+			width: 94%;
+		}
 	}
 	&__title {
 		@include mobile-page-header;
@@ -47,29 +54,29 @@
 			margin-left: 20px;
 		}
 	}
-
-	// &__container {
-	// 	@include tablet {
-	// 		display: flex;
-	// 		flex-direction: column;
-	// 		justify-content: space-between;
-	// 		border-top: 2px solid $Cloud;
-	// 	}
-	// }
 }
 
-.form {
+.form-wrapper {
 	@include tablet {
 		display: flex;
+		justify-content: center;
+		justify-content: space-around;
 	}
+}
+.form {
 	&__container {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		@include tablet {
+			display: flex;
+			width: 80%;
+			padding-left: 20px;
+		}
 	}
 
 	&__title {
-		border-top: 2px solid $Cloud;
+		border-top: 1px solid $Cloud;
 		padding: 20px;
 		padding-bottom: 10px;
 		@include mobile-subheader;
@@ -82,22 +89,39 @@
 		padding-bottom: 10px;
 	}
 	&__input-box {
-		width: 295px;
-		height: 30px;
+		width: 18.4375rem;
+		height: 1.875rem;
 		border-radius: 20px;
 		padding-top: 10px;
+		padding: 10px;
+		@include Body-medium;
+		@include tablet {
+			height: 2.375rem;
+			width: 17.96rem;
+		}
+		@include desktop {
+			height: 30px;
+			width: 430px;
+			border-radius: 40px;
+			// border-color: $light-grey;
+		}
 	}
 }
 
 .button {
 	display: flex;
-	width: 90%;
 	margin-top: 30px;
 	background-color: $light-grey;
 	padding-left: 20px;
 	padding-top: 20px;
-	width: 343px;
 	height: 68px;
+	@include tablet {
+		display: flex;
+		justify-content: flex-end;
+	}
+	@include desktop {
+		// height: 50px;
+	}
 
 	&__cancel {
 		height: 36px;
@@ -105,6 +129,12 @@
 		border-radius: 20px;
 		background-color: $white;
 		margin-right: 20px;
+		@include tablet {
+			height: 38px;
+			width: 61px;
+			left: 643px;
+			top: 650px;
+		}
 	}
 	&__save {
 		height: 36px;
@@ -112,5 +142,12 @@
 		border-radius: 20px;
 		background-color: $In-stock-Indigo;
 		color: $white;
+		@include tablet {
+			height: 38px;
+			width: 61px;
+			left: 643px;
+			top: 650px;
+			margin-right: 16px;
+		}
 	}
 }

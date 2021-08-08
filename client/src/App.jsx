@@ -16,6 +16,8 @@ function App() {
 				{/* <Route exact path="/" component={Warehouses} /> */}
 				<Route path="/details" component={WharehouseDetails} />
 				<Route path="/edit" component={EditWarehouse} />
+
+				<Route path="/edit/:id" component={EditWarehouse} />
 				{/* <Route path="/add" component={AddWarehouse} /> */}
 
 				<Route path="/inventory" component={InventoryList} />
