@@ -13,7 +13,6 @@ export default class InventoryList extends Component {
 
   componentDidMount() {
     axios.get("http://localhost:8081/inventories").then((res) => {
-      console.log(res.data);
       this.setState({
         inventoryList: res.data,
       });
