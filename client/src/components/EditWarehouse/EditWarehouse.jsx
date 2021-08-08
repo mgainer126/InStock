@@ -1,4 +1,3 @@
-//Passing Props to Warehouse Input for title and button text
 import "./EditWarehouse.scss";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import React from "react";
@@ -6,7 +5,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 class EditWarehouse extends React.Component {
-	//setting state for input felids
 	state = {
 		warehouseDetails: [],
 		id: "",
@@ -20,7 +18,6 @@ class EditWarehouse extends React.Component {
 		contactEmail: "",
 	};
 
-	//   coming from getting single warehouse from backend (waiting for backend next ticket)
 	componentDidMount() {
 		axios
 			.get(`http://localhost:8081/warehouses`)
@@ -62,7 +59,6 @@ class EditWarehouse extends React.Component {
 		debugger;
 		console.log(this.state.id);
 		const updatedWareHouse = {
-			//must match state properties
 			name: this.state.name,
 			address: this.state.address,
 			city: this.state.city,
