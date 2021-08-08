@@ -48,20 +48,34 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 
-// Matts APIs
-const displayInventoryDetails = () => {
-  const inventoryDetailsData = fs.readFileSync(
-    path.resolve(__dirname, "../data/inventories.json")
-  );
-  const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
-  console.log(parsedInventoryDetails);
-  return parsedInventoryDetails;
-};
+// // Matts APIs
+// const displayInventoryDetails = () => {
+//   const inventoryDetailsData = fs.readFileSync(
+//     path.resolve(__dirname, "../data/warehouses.json")
+//   );
+//   const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
+//   console.log(parsedInventoryDetails);
+//   return parsedInventoryDetails;
+// };
 
+// router.get("/", (req, res) => {
+//   const inventoryDetails = displayInventoryDetails();
+//   res.json(inventoryDetails);
+//   console.log(inventoryDetails);
+// });
+
+const displayWarehouseDetails = () => {
+  const WarehouseDetailsData = fs.readFileSync(
+    path.resolve(__dirname, "../data/warehouses.json")
+  );
+  const parsedWarehouseDetails = JSON.parse(WarehouseDetailsData);
+  console.log(parsedWarehouseDetails);
+  return parsedWarehouseDetails;
+};
 router.get("/", (req, res) => {
-  const inventoryDetails = displayInventoryDetails();
-  res.json(inventoryDetails);
-  console.log(inventoryDetails);
+  const WarehouseDetails = displayWarehouseDetails();
+  res.json(WarehouseDetails);
+  console.log(WarehouseDetails);
 });
 
 module.exports = router;
