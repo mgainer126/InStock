@@ -29,4 +29,26 @@ router.get("/", (req, res) => {
   console.log(inventoryDetails);
 });
 
+router.post("/", (req, res) => {
+  const inventoryDetails = displayInventoryDetails();
+  const newInventoryItem = {
+    id: uniqid(),
+    warehouseID: uniqid(),
+    warehouseName: req.body.warehouseName,
+    itemName: req.body.itemName,
+    description: req.body.description,
+    category: req.body.category,
+    status: req.body.status,
+    quantity: req.body.quantity,
+  };
+  inventoryDetails.push(newInventoryItem);
+
+  fs.writeFileSync(
+    "../data/inventories.json",
+    JSON.stringify(inventoryDetails)
+  );
+
+  res.json(inventoryDetails);
+});
+
 module.exports = router;

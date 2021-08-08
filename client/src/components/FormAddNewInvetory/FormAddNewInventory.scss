@@ -22,7 +22,7 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  height: 43rem;
+  height: 50rem;
 }
 .additem {
   &__title {
@@ -136,5 +136,22 @@
     padding: 8px, 51px, 8px, 51px;
     background: #2e66e6;
     color: white;
+  }
+  &__qnt-title {
+    font-family: Titillium Web;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  &__qnt-entry {
+    height: 36px;
+    width: 295px;
+    left: 40px;
+    top: 357px;
+    border-radius: 20px;
+    border: #bdc5d5 1px solid;
   }
 }

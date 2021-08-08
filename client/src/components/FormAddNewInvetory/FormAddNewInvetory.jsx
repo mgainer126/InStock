@@ -1,7 +1,12 @@
 import "../../components/FormAddNewInvetory/FormAddNewInventory.scss";
 import arrow from "../../assets/Icons/arrow_back-24px.svg";
 
-function FormAddNewInventory() {
+function FormAddNewInventory({
+  clickHandle,
+  inputChange,
+  itemName,
+  itemDescription,
+}) {
   return (
     <div className="additems">
       <h3 className="additem__title">
@@ -9,7 +14,7 @@ function FormAddNewInventory() {
         INVENTORY ITEM
       </h3>
       <h4 className="additem__fromsec">Item Details</h4>
-      <form>
+      <form onSubmit={clickHandle}>
         <div className="itemdetails-wrapper">
           <label HTMLfor="item-name" className="additem__label">
             Item Name
@@ -19,12 +24,10 @@ function FormAddNewInventory() {
             id="item-name"
             placeholder="Item Name"
             className="additem__name"
+            name="item-name"
           ></input>
-          <label
-            HTMLfor="item-description"
-            value="Description"
-            className="additem__des-tile"
-          >
+
+          <label HTMLfor="item-description" className="additem__des-tile">
             Description
           </label>
           <input
@@ -32,21 +35,30 @@ function FormAddNewInventory() {
             id="item-description"
             placeholder="Please enter a brief description..."
             className="additem__description"
+            name="item-description"
           ></input>
           <label HTMLfor="catgory" className="additem__cat-title">
             Category
           </label>
           <select id="category" className="additem__cat-sel">
-            <option value="category-1" className="additem__cat-item">
+            <option
+              value="category-1"
+              className="additem__cat-item"
+              name="category-1"
+            >
               Item 1
             </option>
-            <option value="category-2" className="additem__cat-item">
+            <option
+              value="category-2"
+              className="additem__cat-item"
+              name="category-2"
+            >
               Item 2
             </option>
-            <option value="category-3" className="additem__cat-item">
+            <option className="additem__cat-item" name="category-3">
               Item 3
             </option>
-            <option value="category-4" className="additem__cat-item">
+            <option className="additem__cat-item" name="category-4">
               Item 4
             </option>
           </select>
@@ -64,20 +76,31 @@ function FormAddNewInventory() {
             </label>
             <input
               type="radio"
-              name="item-status-in"
-              value="In Stock"
+              name="radio"
               className="additem__raditem"
+              id="item-status-in"
             ></input>
             <label HTMLfor="item-status-out" className="additem__radsel">
               Out Of Stock
             </label>
             <input
               type="radio"
-              name="item-status-out"
-              value="Out Of Stock"
+              name="radio"
               className="additem__raditem"
+              id="item-status-out"
             ></input>
           </div>
+
+          <label HTMLfor="qnt" className="additem__qnt-title">
+            Quantity
+          </label>
+          <input
+            type="text"
+            id="qnt"
+            placeholder="0"
+            className="additem__qnt-entry"
+          ></input>
+
           <label HTMLfor="warehouse" className="additem__waresel">
             Warehouse
           </label>
@@ -99,8 +122,12 @@ function FormAddNewInventory() {
             </option>
           </select>
         </div>
-        <button className="additem__cancelbtn">Cancel</button>
-        <button className="additem__savebtn">Save</button>
+        <button className="additem__cancelbtn" type="submit ">
+          Cancel
+        </button>
+        <button className="additem__savebtn" type="submit ">
+          Save
+        </button>
       </form>
     </div>
   );
