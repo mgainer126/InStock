@@ -81,10 +81,10 @@ class EditWarehouse extends React.Component {
 					address: response.data.address,
 					city: response.data.city,
 					country: response.data.country,
-					contactName: response.data.contactName,
-					contactPosition: response.data.contactPosition,
-					contactPhone: response.data.contactPhone,
-					contactEmail: response.data.contactEmail,
+					contactName: response.data.contact.contactName,
+					contactPosition: response.data.contact.contactPosition,
+					contactPhone: response.data.contact.contactPhone,
+					contactEmail: response.data.contact.contactEmail,
 				});
 				this.props.history.push("/");
 			})
@@ -95,7 +95,7 @@ class EditWarehouse extends React.Component {
 
 	render() {
 		console.log(this.state.name);
-		console.log(this.state.contactName);
+		console.log(this.state.contact);
 		return (
 			<div className="card">
 				<div className="card__edit">
