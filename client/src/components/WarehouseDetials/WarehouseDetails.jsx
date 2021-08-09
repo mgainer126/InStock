@@ -14,11 +14,13 @@ function WarehouseDetails({ selectedWarehouse }) {
         <div className="warehouse-page">
           <div className="info">
             <div className="info__wharehouse-head">
-              <img
-                className="info__back-btn"
-                src={back}
-                alt="back button"
-              ></img>
+              <Link to="/">
+                <img
+                  className="info__back-btn"
+                  src={back}
+                  alt="back button"
+                ></img>
+              </Link>
               <h3 className="info__warehouse-loc">{selectedWarehouse.name}</h3>
               <Link>
                 <img className="info__edit-btn" src={edit} alt="edit"></img>
