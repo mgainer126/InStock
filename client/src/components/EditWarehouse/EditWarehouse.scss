@@ -4,7 +4,7 @@
 .card {
 	background-color: $white;
 	margin: 20px;
-	border: 2px solid black;
+	border: 2px solid $light-grey;
 	position: relative;
 	top: -25px;
 	left: 16px;
@@ -48,8 +48,10 @@
 }
 
 #left-border {
-	border-left-style: solid;
-	border-left-color: $Cloud;
+	@include tablet {
+		border-left-style: solid;
+		border-left-color: $Cloud;
+	}
 }
 .form {
 	&__container {
