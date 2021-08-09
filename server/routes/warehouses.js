@@ -56,10 +56,64 @@ const displayWarehouseDetails = () => {
   console.log(parsedWarehouseDetails);
   return parsedWarehouseDetails;
 };
+//Betty - API to GET a Single Warehouse
+const singleWarehouse = () => {
+  const warehouse = fs.readFileSync("./data/warehouses.json");
+  const parsedWarehouseData = JSON.parse(warehouse);
+  return parsedWarehouseData;
+};
+router.get("/", (req, res) => {
+  const warehouse = singleWarehouse();
+  console.log("warehouse");
+  res.json(warehouse);
+});
+
+//Betty - API to PUT/PATCH/EDIT a Warehouse
+router.patch("/:id", (req, res) => {
+  const warehouseDetails = singleWarehouse();
+  const warehouse = warehouseDetails.find(
+    (warehouse) => warehouse.id === req.params.id
+  );
+  if (!warehouse) return res.status(404).json({ message: "Not Found" });
+
+  if (!warehouse) {
+    throw new Error("Please supply a valid input.");
+  } else {
+    warehouse.name = req.body.name;
+    warehouse.address = req.body.address;
+    warehouse.city = req.body.city;
+    warehouse.country = req.body.country;
+    warehouse.contact.name = req.body.contactName;
+    warehouse.contact.position = req.body.contactPosition;
+    warehouse.contact.phone = req.body.contactPhone;
+    warehouse.contact.email = req.body.contactEmail;
+
+    fs.writeFileSync(
+      "./data/warehouses.json",
+      JSON.stringify(warehouseDetails)
+    );
+    res.json(warehouse);
+  }
+
+  console.log(req.params.id);
+});
+
+// Matts APIs
+const displayInventoryDetails = () => {
+  const inventoryDetailsData = fs.readFileSync(
+    path.resolve(__dirname, "../data/inventories.json")
+  );
+  const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
+  console.log(parsedInventoryDetails);
+  return parsedInventoryDetails;
+};
 router.get("/", (req, res) => {
   const WarehouseDetails = displayWarehouseDetails();
-  res.json(WarehouseDetails);
-  console.log(WarehouseDetails);
+  //   res.json(WarehouseDetails);
+  //   console.log(WarehouseDetails);
+  const inventoryDetails = displayInventoryDetails();
+  res.json({ inventoryDetails, WarehouseDetails });
+  // console.log(inventoryDetails);
 });
 
 module.exports = router;

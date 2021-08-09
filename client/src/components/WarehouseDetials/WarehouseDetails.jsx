@@ -9,46 +9,54 @@ function WarehouseDetails({ selectedWarehouse }) {
   console.log(selectedWarehouse);
 
   return (
-    <div className="warehouse-page">
-      <div className="info">
-        <div className="info__wharehouse-head">
-          <img className="info__back-btn" src={back} alt="back button"></img>
-          <h3 className="info__warehouse-loc">{selectedWarehouse.name}</h3>
-          <Link>
-            <img className="info__edit-btn" src={edit} alt="edit"></img>
-          </Link>
-        </div>
-        <div className="tablet__alignment">
-          <address className="info__address">
-            <h4 className="info__title">WAREHOUSE ADDRESS:</h4>
-            <p className="info__address">{selectedWarehouse.address}</p>
-            <p className="info__address">{selectedWarehouse.city}</p>
-          </address>
-          <contact className="info__contact">
-            <div className="info__contact-name">
-              <h4 className="info__title">CONTACT NAME:</h4>
-              <p className="info__contact-detail">
-                {selectedWarehouse.contact.name}
-              </p>
-              <p className="info__contact-detail">
-                {selectedWarehouse.contact.position}
-              </p>
+    <>
+      {selectedWarehouse && (
+        <div className="warehouse-page">
+          <div className="info">
+            <div className="info__wharehouse-head">
+              <img
+                className="info__back-btn"
+                src={back}
+                alt="back button"
+              ></img>
+              <h3 className="info__warehouse-loc">{selectedWarehouse.name}</h3>
+              <Link>
+                <img className="info__edit-btn" src={edit} alt="edit"></img>
+              </Link>
             </div>
-            <div className="info__contact-info">
-              <h4 className="info__title">CONTACT INFORMATION:</h4>
-              <p className="info__contact-info-detail">
-                {selectedWarehouse.contact.phone}1
-              </p>
-              <p className="info__contact-info-detail">
-                {selectedWarehouse.contact.email}
-              </p>
+            <div className="tablet__alignment">
+              <address className="info__address">
+                <h4 className="info__title">WAREHOUSE ADDRESS:</h4>
+                <p className="info__address">{selectedWarehouse.address}</p>
+                <p className="info__address">{selectedWarehouse.city}</p>
+              </address>
+              <contact className="info__contact">
+                <div className="info__contact-name">
+                  <h4 className="info__title">CONTACT NAME:</h4>
+                  <p className="info__contact-detail">
+                    {selectedWarehouse.contact.name}
+                  </p>
+                  <p className="info__contact-detail">
+                    {selectedWarehouse.contact.position}
+                  </p>
+                </div>
+                <div className="info__contact-info">
+                  <h4 className="info__title">CONTACT INFORMATION:</h4>
+                  <p className="info__contact-info-detail">
+                    {selectedWarehouse.contact.phone}1
+                  </p>
+                  <p className="info__contact-info-detail">
+                    {selectedWarehouse.contact.email}
+                  </p>
+                </div>
+              </contact>
             </div>
-          </contact>
-        </div>
-      </div>
+          </div>
 
-      {/* //inventory filter  */}
-    </div>
+          {/* //inventory filter  */}
+        </div>
+      )}
+    </>
   );
 }
 
