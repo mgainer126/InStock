@@ -1,6 +1,7 @@
 import deleteicon from "../../assets/Icons/delete_outline-24px.svg";
 import editicon from "../../assets/Icons/edit-24px.svg";
 import arrow from "../../assets/Icons/chevron_right-24px.svg";
+import { Link } from "react-router-dom";
 
 function Warehouses({ warehouseList }) {
   return (
@@ -15,7 +16,7 @@ function Warehouses({ warehouseList }) {
                 </p>
                 <div className="arrowcontainer">
                   <p className="main__warehouse-info--warehouse-title-txt">
-                    {data.name}
+                    <Link to={`/details/${data.id}`}>{data.name}</Link>
                   </p>
                   <img className="arrow" src={arrow} />
                 </div>

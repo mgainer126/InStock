@@ -4,6 +4,7 @@ const PORT = 8081;
 const cors = require("cors");
 const warehouseRoutes = require("./routes/warehouses");
 const inventoryRoutes = require("./routes/inventories");
+
 app.use(cors());
 
 app.use(express.json());
@@ -14,14 +15,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use((req, _res, next) => {
-  console.log("Request:");
-  console.log("- Path:", req.path);
-  console.log("- Time:", new Date());
-  next();
+	console.log("Request:");
+	console.log("- Path:", req.path);
+	console.log("- Time:", new Date());
+	next();
 });
 
 app.use("/warehouses", warehouseRoutes);
 app.use("/inventories", inventoryRoutes);
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+	console.log(`Listening on port ${PORT}`);
 });
