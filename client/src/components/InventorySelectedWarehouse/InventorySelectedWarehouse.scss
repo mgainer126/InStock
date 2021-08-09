@@ -153,11 +153,9 @@
     border-top: 2px grey solid;
   }
   .info {
-    // &__address {
-    //   border-right: solid grey;
-    //   width: 43rem;
-    //   margin-top: 1rem;
-    // }
+    &__address {
+      margin-left: 2.5rem;
+    }
     &__contact {
       border-bottom: none;
       margin-top: 1rem;
