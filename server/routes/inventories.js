@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const uniqid = require("uniqid");
 const dbInventories = "./data/inventories.json";
+const path = require("path");
+
 let inventories = JSON.parse(fs.readFileSync(dbInventories, "utf8"));
 
 router.get("", (req, res) => {
@@ -16,7 +19,7 @@ router.get("/:id", (req, res) => {
 // Matts APIs
 const displayInventoryDetails = () => {
   const inventoryDetailsData = fs.readFileSync(
-    path.resolve(__dirname, "../data/inventories.json")
+    path.resolve(__dirname, { dbInventories })
   );
   const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
   console.log(parsedInventoryDetails);
@@ -29,7 +32,7 @@ router.get("/", (req, res) => {
   console.log(inventoryDetails);
 });
 
-router.post("/", (req, res) => {
+router.post("/item", (req, res) => {
   const inventoryDetails = displayInventoryDetails();
   const newInventoryItem = {
     id: uniqid(),
@@ -41,13 +44,10 @@ router.post("/", (req, res) => {
     status: req.body.status,
     quantity: req.body.quantity,
   };
+  console.log(newInventoryItem);
   inventoryDetails.push(newInventoryItem);
 
-  fs.writeFileSync(
-    "../data/inventories.json",
-    JSON.stringify(inventoryDetails)
-  );
-
+  fs.writeFileSync("./data/inventories.json", JSON.stringify(inventoryDetails));
   res.json(inventoryDetails);
 });
 

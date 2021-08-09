@@ -48,4 +48,18 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 };
 
+const displayWarehouseDetails = () => {
+  const WarehouseDetailsData = fs.readFileSync(
+    path.resolve(__dirname, "../data/warehouses.json")
+  );
+  const parsedWarehouseDetails = JSON.parse(WarehouseDetailsData);
+  console.log(parsedWarehouseDetails);
+  return parsedWarehouseDetails;
+};
+router.get("/", (req, res) => {
+  const WarehouseDetails = displayWarehouseDetails();
+  res.json(WarehouseDetails);
+  console.log(WarehouseDetails);
+});
+
 module.exports = router;

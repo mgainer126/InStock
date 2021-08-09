@@ -4,6 +4,7 @@ import "../Inventory/Inventory.scss";
 import { Link } from "react-router-dom";
 
 function Inventory({ inventoryarr, clickhandle }) {
+  console.log(inventoryarr);
   return inventoryarr.map((item) => {
     return (
       <div>

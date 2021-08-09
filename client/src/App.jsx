@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import InventoryList from "../src/pages/InventoryList/InventoryList";
 import ItemDetail from "../src/pages/ItemDetail/ItemDetail";
-import WharehouseDetails from "./components/WarehouseDetials/WarehouseDetails";
+import WarehouseDetail from "../src/pages/WarehouseDetail/WarehouseDetail";
 import AddInventoryItem from "../src/pages/AddInventoryItem/AddInventoryItem";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Switch>
         {/* <Route exact path="/" component={Warehouses} /> */}
-        <Route path="/details" component={WharehouseDetails} />
+        <Route path="/details/:id" component={WarehouseDetail} />
         {/* <Route path="/edit" component={EditWarehouse} />
         <Route path="/add" component={AddWarehouse} /> */}
 
