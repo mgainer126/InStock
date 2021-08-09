@@ -10,7 +10,10 @@
 	left: 16px;
 	border-radius: 3px;
 	width: 90%;
+	width: 343px;
+
 	@include tablet {
+		height: 674px;
 		width: 704px;
 	}
 	@include desktop {
@@ -43,7 +46,6 @@
 		display: flex;
 		justify-content: center;
 		justify-content: space-around;
-		padding-top: 20px;
 	}
 }
 
@@ -51,7 +53,9 @@
 	border-left-style: solid;
 	border-left-color: $Cloud;
 }
+
 .form {
+	margin: 10px;
 	&__container {
 		display: flex;
 		justify-content: center;
@@ -73,26 +77,67 @@
 		}
 	}
 	&__label {
-		@include mobile-body-medium;
+		padding-top: 2px;
+		@include mobile-body-large;
 		padding-bottom: 10px;
 	}
 	&__input-box {
-		width: 18.4375rem;
-		height: 1.875rem;
+		height: 40px;
+		width: 295px;
+		left: 40px;
+		top: 357px;
 		border-radius: 20px;
-		padding-top: 10px;
-		padding: 10px;
+		background-color: $white;
+		&--description {
+			width: 295px;
+			height: 120px;
+			left: 40px;
+			top: 433px;
+			border-radius: 20px;
+			@include desktop {
+				width: 429px;
+			}
+		}
+		&--status {
+			height: 16px;
+			width: 16px;
+			left: 40px;
+			top: 748px;
+			border-radius: 20px;
+		}
+		&--one {
+			height: 2.8125rem;
+			border-radius: 20px;
+			width: 17.96rem;
+			@include desktop {
+				width: 429px;
+			}
+		}
+
 		@include Body-medium;
 		@include tablet {
-			height: 2.375rem;
+			height: 2.8125rem;
 			width: 17.96rem;
 		}
 		@include desktop {
-			height: 30px;
+			height: 40px;
 			width: 430px;
 			border-radius: 40px;
 		}
 	}
+}
+
+#quantity {
+	@include desktop {
+		width: 120px;
+	}
+}
+
+.status__wrapper {
+	display: flex;
+	justify-content: flex-start;
+	justify-content: space-around;
+	@include mobile-body-medium;
 }
 
 .button {
@@ -115,20 +160,20 @@
 		margin-right: 20px;
 		@include tablet {
 			height: 38px;
-			width: 61px;
+			width: 72px;
 			left: 643px;
 			top: 650px;
 		}
 	}
-	&__save {
+	&__add-item {
 		height: 36px;
 		width: 139px;
 		border-radius: 20px;
 		background-color: $In-stock-Indigo;
 		color: $white;
 		@include tablet {
+			width: 98px;
 			height: 38px;
-			width: 61px;
 			left: 643px;
 			top: 650px;
 			margin-right: 16px;

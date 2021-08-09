@@ -152,7 +152,7 @@ class EditWarehouse extends React.Component {
 						</form>
 					</div>
 
-					<div className="form">
+					<div id="left-border" className="form">
 						<h1 className="form__title">Contact Details</h1>
 						<form className="form__container">
 							<label className="form__label" htmlFor="name">
