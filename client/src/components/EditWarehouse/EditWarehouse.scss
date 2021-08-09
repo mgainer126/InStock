@@ -9,7 +9,7 @@
 	top: -25px;
 	left: 16px;
 	border-radius: 3px;
-	width: 90%;
+	width: 343px;
 	@include tablet {
 		width: 704px;
 	}
@@ -49,8 +49,7 @@
 
 #left-border {
 	@include tablet {
-		border-left-style: solid;
-		border-left-color: $Cloud;
+		border-left: 2px solid $Cloud;
 	}
 }
 .form {
@@ -80,17 +79,16 @@
 	}
 	&__input-box {
 		width: 18.4375rem;
-		height: 1.875rem;
+		height: 1.25rem;
 		border-radius: 20px;
 		padding-top: 10px;
 		padding: 10px;
 		@include Body-medium;
 		@include tablet {
-			height: 2.375rem;
+			height: 1.375rem;
 			width: 17.96rem;
 		}
 		@include desktop {
-			height: 30px;
 			width: 430px;
 			border-radius: 40px;
 		}
