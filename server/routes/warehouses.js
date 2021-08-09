@@ -59,7 +59,6 @@ router.get("/", (req, res) => {
 	console.log("warehouse");
 	res.json(warehouse);
 });
-//Betty - End of GET a Single Warehouse
 
 //Betty - API to PUT/PATCH/EDIT a Warehouse
 router.patch("/:id", (req, res) => {
@@ -68,8 +67,6 @@ router.patch("/:id", (req, res) => {
 		(warehouse) => warehouse.id === req.params.id
 	);
 	if (!warehouse) return res.status(404).json({ message: "Not Found" });
-
-	//do all for the rest of the inputs
 
 	if (!warehouse) {
 		throw new Error("Please supply a valid input.");
@@ -92,7 +89,6 @@ router.patch("/:id", (req, res) => {
 
 	console.log(req.params.id);
 });
-//Betty - End of PUT/PATCH/EDIT a Warehouse
 
 // Matts APIs
 const displayInventoryDetails = () => {
