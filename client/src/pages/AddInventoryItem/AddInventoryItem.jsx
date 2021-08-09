@@ -9,6 +9,7 @@ export default class InventoryList extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
     const newInventoryItem = [
       {
         itemName: event.target[0].value,
@@ -20,14 +21,15 @@ export default class InventoryList extends Component {
         warehouse: event.target[6].value,
       },
     ];
+    console.log(newInventoryItem[0]);
     {
-      this.createNewInventoryItem(newInventoryItem);
+      this.createNewInventoryItem(newInventoryItem[0]);
     }
   };
 
   createNewInventoryItem = (obj) => {
     axios
-      .post("http://localhost:8081/inventories", obj)
+      .post("http://localhost:8081/inventories/item/", obj)
       .then((response) => {
         console.log(response);
         this.setState({ inventoryItem: response.data });
