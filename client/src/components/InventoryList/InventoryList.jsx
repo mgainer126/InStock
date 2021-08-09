@@ -7,16 +7,18 @@ import "../InventoryList/InventoryList.scss";
 // function InventoryList() {
 export default class InventoryList extends Component {
   state = {
-    inventoryList: null,
+    inventoryList: [],
   };
 
   componentDidMount() {
-    axios.get(`${API_URL}/inventories`).then((res) => {
-      console.log(res.data);
-      this.setState({
-        inventoryList: res.data,
-      });
-    });
+    console.log(this.state.inventoryList.length);
+    if (!this.state.inventoryList.length) {
+      axios.get(`${API_URL}/inventories`).then((res) => {
+        this.setState({
+          inventoryList: res.data,
+        });
+      });    
+    }
   }
 
   render() {
