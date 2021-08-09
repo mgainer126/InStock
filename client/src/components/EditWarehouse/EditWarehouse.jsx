@@ -99,7 +99,9 @@ class EditWarehouse extends React.Component {
 		return (
 			<div className="card">
 				<div className="card__edit">
-					<img className="card__arrow" src={backArrow} />
+					<Link to="/details">
+						<img className="card__arrow" src={backArrow} />
+					</Link>
 					<h1 className="card__title">Edit Warehouse</h1>
 				</div>
 				<div className="form-wrapper">
