@@ -44,7 +44,6 @@ router.post("/item", (req, res) => {
     itemName: req.body.itemName,
     description: req.body.description,
     category: req.body.category,
-    status: req.body.status,
     quantity: req.body.quantity,
   };
   console.log(newInventoryItem);
