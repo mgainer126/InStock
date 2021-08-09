@@ -1,8 +1,9 @@
 import { useState } from "react";
-import trash from "../assets/Icons/delete_outline-24px.svg";
-import edit from "../assets/Icons/edit-24px.svg";
-import DialogDeleteInventory from "../components/DialogDeleteInventory/DialogDeleteInventory";
-import "../pages/Inventory.scss";
+import trash from "../../assets/Icons/delete_outline-24px.svg";
+import edit from "../../assets/Icons/edit-24px.svg";
+import DialogDeleteInventory from "../DialogDeleteInventory/DialogDeleteInventory";
+import "../Inventory/Inventory.scss";
+import { Link } from "react-router-dom";
 
 const InStock = ({ inStock }) => (
   <li
@@ -27,26 +28,31 @@ const InStockTable = ({ inStock }) => (
   </p>
 );
 
-function Inventory({ inventoryarr }) {
+function Inventory({ inventoryarr, clickhandle }) {
   const [showModal, setShowModal] = useState(false);
   const [inventory, setInventory] = useState(null);
   const [inventories, setInventories] = useState(inventoryarr);
 
   const onShowModal = (isShowModal, inventory) => {
     setShowModal(isShowModal);
-    setInventory(inventory)
+    setInventory(inventory);
   };
   const closeModal = (item) => {
     if (item) {
-      const inventoriesFiltered = inventories.filter(i => i.id !== item.id);
+      const inventoriesFiltered = inventories.filter((i) => i.id !== item.id);
       setInventories(inventoriesFiltered);
     }
     setShowModal(false);
-  }
+  };
   return (
     <div>
-      {showModal ? <DialogDeleteInventory item={inventory} onCloseModal={closeModal}></DialogDeleteInventory> : null}
-      {inventories.map((item) => {
+      {showModal ? (
+        <DialogDeleteInventory
+          item={inventory}
+          onCloseModal={closeModal}
+        ></DialogDeleteInventory>
+      ) : null}
+      {inventoryarr.map((item) => {
         return (
           <div key={item.id}>
             <ul className="item mobile">
@@ -54,7 +60,13 @@ function Inventory({ inventoryarr }) {
                 <section className="item__sub-arrangement">
                   <div>
                     <h4>INVENTORY ITEM</h4>
-                    <li className="item__item">{`${item.itemName} >`}</li>
+                    <div onClick={() => clickhandle(item)}>
+                      <Link to={`/itemDetails/${item.id}`}>
+                        <li className="item__item">
+                          {item.itemName + " " + " > "}
+                        </li>
+                      </Link>
+                    </div>
                   </div>
                   <div>
                     <h4>CATEGORY</h4>
@@ -77,7 +89,11 @@ function Inventory({ inventoryarr }) {
                 </section>
               </div>
               <div className="item__action">
-                <img src={trash} alt="trash" onClick={() => onShowModal(true,item)}></img>
+                <img
+                  src={trash}
+                  alt="trash"
+                  onClick={() => onShowModal(true, item)}
+                ></img>
                 <img src={edit} alt="edit"></img>
               </div>
             </ul>
@@ -89,7 +105,11 @@ function Inventory({ inventoryarr }) {
                 <p className="item__qty">{item.quantity}</p>
                 <p className="item__warehouse">{item.warehouseName}</p>
                 <div className="item__action">
-                  <img src={trash} alt="trash" onClick={() => onShowModal(true,item)}></img>
+                  <img
+                    src={trash}
+                    alt="trash"
+                    onClick={() => onShowModal(true, item)}
+                  ></img>
                   <img src={edit} alt="edit"></img>
                 </div>
               </div>

@@ -1,13 +1,24 @@
-@use './../partials/mixins' as *;
-.tablet {
-  display: none;
+@use '../../partials/mixins.scss' as *;
+$tablet-margin-list: 2rem;
+body {
+  /* White */
+
+  background: #ffffff;
+  /* Card Shadow */
+
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
 }
+
+// .tablet {
+//   display: none;
+// }
 .item {
-  list-style: none;
+  // list-style: none;
   border: solid #bdc5d5 1px;
   padding: 0;
   font-size: 13px;
-  
+
   &__arrangement {
     display: flex;
     justify-content: center;
@@ -52,20 +63,33 @@
     }
   }
 }
+
+h4 {
+  height: 16px;
+  width: 150px;
+  left: 40px;
+  top: 349px;
+  color: #13182c;
+  margin-right: auto;
+  margin-left: 1.5rem;
+}
+
+// @media screen and (min-width: 768px) {
+//   h4 {
 @include tablet {
-  .mobile {
-    display: none;
-  }
+  // .mobile {
+  //   display: none;
+  // }
   .tablet {
     display: flex;
     padding-left: 2rem;
     padding-right: 2rem;
     &__body {
       display: grid;
-      grid-template-columns: repeat(6,1fr);
+      grid-template-columns: repeat(6, 1fr);
       column-gap: 1rem;
       width: 100%;
-      border-bottom: 1px solid #BDC5D5;
+      border-bottom: 1px solid #bdc5d5;
       p {
         display: flex;
         align-items: center;
@@ -82,11 +106,4 @@
       }
     }
   }
-}
-h4 {
-  height: 16px;
-  width: 150px;
-  left: 40px;
-  top: 349px;
-  color: #5c667e;
 }
