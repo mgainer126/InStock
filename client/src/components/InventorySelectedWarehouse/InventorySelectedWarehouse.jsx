@@ -1,3 +1,4 @@
+import "../InventorySelectedWarehouse/InventorySelectedWarehouse.scss";
 import edit from "../../assets/Icons/edit-24px.svg";
 import trash from "../../assets/Icons/delete_outline-24px.svg";
 
@@ -5,12 +6,12 @@ function InventorySelectedWarehouse({ inventoryByWarehouse }) {
   console.log(inventoryByWarehouse);
   return inventoryByWarehouse.map((item) => {
     return (
-      <>
+      <div className="inventory-wrapper">
         <div className="inventory__items">
           <section className="inventory__info">
             <div className="inventory__item">
               <h4 className="info__title">INVENTORY ITEM</h4>
-              <p className="inventory__item--1">{item.itemName}</p>
+              <p className="inventory__item--1">{item.itemName} > </p>
             </div>
             <section className="inventory__detail">
               <div className="inventory__cat">
@@ -41,7 +42,7 @@ function InventorySelectedWarehouse({ inventoryByWarehouse }) {
             <img className="inventory__edit" src={edit} alt="edit"></img>
           </section>
         </div>
-      </>
+      </div>
     );
   });
 }

@@ -1,6 +1,7 @@
 import WarehouseDetails from "../../components/WarehouseDetials/WarehouseDetails";
 import InventorySelectedWarehouse from "../../components/InventorySelectedWarehouse/InventorySelectedWarehouse";
 import React, { Component } from "react";
+import "../WarehouseDetail/WarehouseDetail.scss";
 import axios from "axios";
 
 export default class WarehouseDetail extends Component {
@@ -41,14 +42,25 @@ export default class WarehouseDetail extends Component {
   render() {
     return (
       <>
-        {this.state.selectedWarehouse && (
+        {this.state.selectedWarehouse && this.state.inventoryByWarehouse && (
           <>
-            <WarehouseDetails
-              selectedWarehouse={this.state.selectedWarehouse}
-            />
-            <InventorySelectedWarehouse
-              inventoryByWarehouse={this.state.inventoryByWarehouse}
-            />
+            <div className="inventory">
+              <WarehouseDetails
+                selectedWarehouse={this.state.selectedWarehouse}
+              />
+
+              <div className="inventory__filter">
+                <h3>INVETORY ITEM</h3>
+                <h3>CATEGORY</h3>
+                <h3>STATUS</h3>
+                <h3>QUANTITY</h3>
+                <h3>ACTIONS</h3>
+              </div>
+
+              <InventorySelectedWarehouse
+                inventoryByWarehouse={this.state.inventoryByWarehouse}
+              />
+            </div>
           </>
         )}
       </>
