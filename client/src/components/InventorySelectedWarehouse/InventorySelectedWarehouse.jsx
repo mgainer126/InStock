@@ -1,10 +1,11 @@
-import trash from "../assets/Icons/delete_outline-24px.svg";
-import edit from "../assets/Icons/edit-24px.svg";
-import "../pages/Inventory.scss";
+import "../InventorySelectedWarehouse/InventorySelectedWarehouse.scss";
+import edit from "../../assets/Icons/edit-24px.svg";
+import trash from "../../assets/Icons/delete_outline-24px.svg";
+import { Link } from "react-router-dom";
 
-function Inventory({ inventoryarr }) {
-  console.log(inventoryarr);
-  return inventoryarr.map((item) => {
+function InventorySelectedWarehouse({ inventoryByWarehouse }) {
+  console.log(inventoryByWarehouse);
+  return inventoryByWarehouse.map((item) => {
     return (
       <div>
         <ul className="item">
@@ -12,7 +13,14 @@ function Inventory({ inventoryarr }) {
             <section className="item__sub-arrangement">
               <div>
                 <h4>INVENTORY ITEM</h4>
-                <li className="item__item">{item.itemName + " " + " > "}</li>
+                {/* <div onClick={() => clickhandle(item)}> */}
+                <div>
+                  <Link to={`/itemDetails/${item.id}`}>
+                    <li className="item__item">
+                      {item.itemName + " " + " > "}
+                    </li>
+                  </Link>
+                </div>
               </div>
               <div>
                 <h4>CATEGORY</h4>
@@ -44,4 +52,4 @@ function Inventory({ inventoryarr }) {
   });
 }
 
-export default Inventory;
+export default InventorySelectedWarehouse;

@@ -3,7 +3,6 @@ import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 class EditWarehouse extends React.Component {
 	state = {
 		warehouseDetails: [],
@@ -17,7 +16,6 @@ class EditWarehouse extends React.Component {
 		contactPhone: "",
 		contactEmail: "",
 	};
-
 	componentDidMount() {
 		axios
 			.get(`http://localhost:8081/warehouses`)
@@ -40,7 +38,6 @@ class EditWarehouse extends React.Component {
 				console.log(err);
 			});
 	}
-
 	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value,
@@ -53,7 +50,6 @@ class EditWarehouse extends React.Component {
 			[event.target.contactEmail]: event.target.value,
 		});
 	};
-
 	handleClick = (event) => {
 		event.preventDefault();
 		debugger;
@@ -92,7 +88,6 @@ class EditWarehouse extends React.Component {
 				console.log(err);
 			});
 	};
-
 	render() {
 		console.log(this.state.name);
 		console.log(this.state.contactName);
@@ -153,7 +148,6 @@ class EditWarehouse extends React.Component {
 							/>
 						</form>
 					</div>
-
 					<div id="left-border" className="form">
 						<h1 className="form__title">Contact Details</h1>
 						<form className="form__container">
@@ -223,5 +217,4 @@ class EditWarehouse extends React.Component {
 		);
 	}
 }
-
 export default EditWarehouse;

@@ -1,0 +1,230 @@
+@use "../../partials/colors" as *;
+@use "../../partials/typography" as *;
+@use "../../partials/mixins" as *;
+
+.main {
+  width: 87.5%;
+  margin: auto;
+  &__title {
+    @include mobile-page-header;
+    @include tablet {
+      display: none;
+    }
+    &--tablet {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+      @include mobile-page-header;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+    border-bottom: 0.0625rem solid $Cloud;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: none;
+    }
+  }
+  &__right-wrap {
+    width: 100%;
+    padding-bottom: 1rem;
+    @include tablet {
+      width: 55%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      @include desktop {
+        padding: 0;
+        width: 40%;
+      }
+    }
+  }
+  &__search {
+    width: 97.5%;
+    padding-bottom: 1rem;
+    @include tablet {
+      padding: 0;
+      width: 45%;
+      @include desktop {
+        width: 60%;
+      }
+    }
+  }
+  &__search-box {
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 0.0625rem solid $Cloud;
+    height: 2.25rem;
+    width: 100%;
+    border-radius: 1.25rem;
+    background-image: url(../../assets//Icons/search-24px.svg);
+    background-repeat: no-repeat;
+    background-position: 95%;
+    padding-bottom: 1rem;
+  }
+  &__btn-wrap {
+    &--btn {
+      width: 100%;
+      height: 2.25rem;
+      border: none;
+      border-radius: 1.25rem;
+      background-color: $In-stock-Indigo;
+      color: $white;
+      @include tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10.5rem;
+        margin: 0;
+      }
+    }
+  }
+  &__warehouse-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem 0 1rem;
+    @include tablet {
+      width: 30%;
+    }
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &--warehouse-title {
+      @include mobile-body-small;
+      font-weight: 600;
+      color: $Slate;
+      @include tablet {
+        display: none;
+      }
+    }
+    &--warehouse {
+      display: flex;
+      flex-direction: column;
+      @include mobile-labels-buttons;
+    }
+    &--warehouse-title-txt {
+      color: $In-stock-Indigo;
+      font-weight: 600;
+    }
+    &--contact-title {
+      display: flex;
+      flex-direction: column;
+      @include mobile-body-small;
+      font-weight: 600;
+      color: $Slate;
+      @include tablet {
+        display: none;
+      }
+    }
+    &--contact {
+      @include mobile-labels-buttons;
+    }
+  }
+
+  &__warehouse-info2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 1rem;
+    margin: auto;
+    @include tablet {
+      width: 40%;
+    }
+    &--info-contact {
+      display: flex;
+      flex-direction: column;
+    }
+    &--address {
+      @include mobile-labels-buttons;
+      display: flex;
+      flex-direction: column;
+    }
+    &--address-title {
+      @include mobile-body-small;
+      font-weight: 600;
+      color: $Slate;
+      @include tablet {
+        display: none;
+      }
+    }
+    &--info-txt {
+      @include mobile-labels-buttons;
+      text-align: center;
+    }
+    &--info-title {
+      text-align: center;
+      @include mobile-body-small;
+      font-weight: 600;
+      color: $Slate;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.arrowcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-row {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  @include tablet {
+    justify-content: space-around;
+    width: 10%;
+    padding-left: 1rem;
+  }
+}
+.section-wrapper {
+  border-bottom: 1px solid $Cloud;
+  padding-bottom: 1.25rem;
+  width: 90%;
+  margin: auto;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+  }
+}
+.title-bar {
+  display: none;
+  @include tablet {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1.5rem 0 1.5rem;
+    background-color: rgba(247, 248, 249, 0.7);
+    @include Body-small;
+    font-weight: 600;
+    color: $Slate;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__position {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+.scroll {
+  height: 1rem;
+  width: 1rem;
+}

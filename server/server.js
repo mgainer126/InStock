@@ -4,6 +4,7 @@ const PORT = 8081;
 const cors = require("cors");
 const warehouseRoutes = require("./routes/warehouses");
 const inventoryRoutes = require("./routes/inventories");
+
 app.use(cors());
 
 app.use(express.json());

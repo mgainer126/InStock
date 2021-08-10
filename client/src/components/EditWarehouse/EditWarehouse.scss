@@ -1,6 +1,5 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/colors' as *;
-
 .card {
 	background-color: $white;
 	margin: 20px;
@@ -38,7 +37,6 @@
 		}
 	}
 }
-
 .form-wrapper {
 	@include tablet {
 		display: flex;
@@ -47,7 +45,6 @@
 		padding-top: 20px;
 	}
 }
-
 #left-border {
 	@include tablet {
 		border-left: 2px solid $Cloud;
@@ -64,7 +61,6 @@
 			padding-left: 20px;
 		}
 	}
-
 	&__title {
 		border-top: 1px solid $Cloud;
 		padding: 20px;
@@ -95,7 +91,6 @@
 		}
 	}
 }
-
 .button {
 	display: flex;
 	margin-top: 30px;
@@ -107,7 +102,6 @@
 		display: flex;
 		justify-content: flex-end;
 	}
-
 	&__cancel {
 		height: 36px;
 		width: 139px;

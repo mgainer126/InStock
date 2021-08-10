@@ -1,0 +1,109 @@
+@use '../../partials/mixins.scss' as *;
+$tablet-margin-list: 2rem;
+body {
+  /* White */
+
+  background: #ffffff;
+  /* Card Shadow */
+
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+}
+
+// .tablet {
+//   display: none;
+// }
+.item {
+  // list-style: none;
+  border: solid #bdc5d5 1px;
+  padding: 0;
+  font-size: 13px;
+
+  &__arrangement {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    width: 312px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+  &__item {
+    color: #2e66e5;
+    //styleName: M H3;
+    font-family: Titillium Web;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  &__status {
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: fit-content;
+    &--in-stock {
+      color: #158463;
+      background: rgba(21, 132, 99, 0.07);
+    }
+    &--out-stock {
+      color: #c94515;
+      background: rgba(201, 69, 21, 0.07);
+    }
+  }
+}
+
+h4 {
+  height: 16px;
+  width: 150px;
+  left: 40px;
+  top: 349px;
+  color: #13182c;
+  margin-right: auto;
+  margin-left: 1.5rem;
+}
+
+// @media screen and (min-width: 768px) {
+//   h4 {
+@include tablet {
+  // .mobile {
+  //   display: none;
+  // }
+  .tablet {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    &__body {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 1rem;
+      width: 100%;
+      border-bottom: 1px solid #bdc5d5;
+      p {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+      div {
+        display: flex;
+        width: initial;
+        margin: 0;
+        justify-content: space-between;
+        img {
+          width: 36px;
+        }
+      }
+    }
+  }
+}
