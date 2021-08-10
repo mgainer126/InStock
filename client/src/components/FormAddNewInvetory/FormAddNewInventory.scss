@@ -164,7 +164,7 @@
 @media screen and (min-width: 768px) {
   .form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .additems {
@@ -180,6 +180,26 @@
   .additem {
     &__cancelbtn {
       margin-left: 22rem;
+    }
+    &__title {
+      border-bottom: none;
+    }
+    &__radsel {
+      font-family: Titillium Web;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .additem {
+    &__qnt-entry {
+      width: 122px;
     }
   }
 }
