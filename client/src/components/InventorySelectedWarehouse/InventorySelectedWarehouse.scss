@@ -1,39 +1,23 @@
-.warehouse-page {
-  width: 320px;
-  display: flex;
-  justify-content: center;
-
-  margin-left: auto;
-  margin-right: auto;
-}
+// .warehouse-page {
+//   width: 320px;
+// }
 .info {
   width: 320px;
   display: flex;
   flex-direction: column;
   align-self: center;
-  &__address {
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 20px;
-  }
-  &__wharehouse-head {
-    display: flex;
-    border-bottom: solid 1px #bdc5d5;
-    width: 100%;
-  }
+
   &__back-btn {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 
-  &__warehouse-loc {
-    margin-right: 9rem;
-  }
+  // &__warehouse-loc {
+  //   margin-right: 11rem;
+  // }
 
   &__address {
-    margin-left: 0.5rem;
+    margin-left: 0.2rem;
   }
 
   &__edit-btn {
@@ -47,20 +31,14 @@
     color: white;
   }
 
-  &__contact {
-    border-bottom: solid 1px #bdc5d5;
-    display: flex;
-    width: 100%;
-  }
-  &__contact-detail {
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 20px;
-  }
   &__title {
     color: grey;
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    margin-left: 0;
   }
   &__contact-name {
     margin-right: 2rem;
@@ -70,13 +48,6 @@
   &__contact-info {
     width: 13rem;
     margin-right: 0.5rem;
-  }
-  &__contact-info-detail {
-    font-family: Titillium Web;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 20px;
   }
 }
 
@@ -94,16 +65,38 @@
     width: 5rem;
     margin-left: 0.5rem;
     &--1 {
+      color: #2e66e6;
+      font-family: Titillium Web;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 20px;
       margin: 0;
     }
     &--2 {
       margin: 0;
+      font-family: Titillium Web;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 20px;
     }
     &--3 {
+      margin: 0;
+      font-family: Titillium Web;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 20px;
       margin: 0;
     }
     &--4 {
       margin: 0;
+      font-family: Titillium Web;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 20px;
     }
   }
   //   &__detail {
@@ -111,11 +104,14 @@
   //     justify-content: space-around;
   //   }
 
-  // &__items {
-  //   display: flex;
-  //   // flex-wrap: wrap;
-  //   // width: 320px;
-  // }
+  &__items {
+    margin-left: auto;
+    display: flex;
+    width: 320px;
+    margin-right: auto;
+    // flex-wrap: wrap;
+    // width: 320px;
+  }
   &__cat {
     margin-right: 2rem;
     width: 10rem;
@@ -140,7 +136,9 @@
     justify-content: space-between;
     padding-bottom: 1rem;
     border-bottom: solid 1px #bdc5d5;
-    width: 113%;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__filter {
@@ -149,23 +147,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .warehouse-page {
-    width: 768px;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .tablet__alignment {
     width: 768px;
     display: flex;
-    border-top: solid 1px #bdc5d5;
+    border-top: 2px grey solid;
   }
   .info {
     &__address {
-      border-right: solid 1px #bdc5d5;
-      width: 22rem;
-      margin-top: 1rem;
+      margin-left: 2.5rem;
     }
     &__contact {
       border-bottom: none;
@@ -178,7 +167,7 @@
       border-bottom: none;
     }
     &__edit-btn {
-      margin-left: 26rem;
+      margin-left: 23rem;
       border-radius: 16px;
       height: 2rem;
       width: 5rem;
@@ -191,9 +180,13 @@
       margin-left: 5.5rem;
     }
   }
+
   .inventory {
     display: flex;
     flex-direction: column;
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
     &__filter {
       display: flex;
       flex-direction: row;
@@ -232,6 +225,8 @@
     &__items {
       display: flex;
       flex-direction: row;
+      margin-left: 0;
+      margin-right: 0;
     }
     &__qty {
       margin-left: 4rem;
@@ -239,9 +234,8 @@
 
     &__cta--tablet {
       display: flex;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       margin-left: 8rem;
-      padding-bottom: 1rem;
     }
     &__cta--mobile {
       display: flex;

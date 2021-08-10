@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { API_URL } from "../../api/config";
-import Inventory from "../../pages/Inventory";
+import Inventory from "../../components/Inventory/Inventory";
 import "../InventoryList/InventoryList.scss";
 
 // function InventoryList() {
@@ -17,7 +17,7 @@ export default class InventoryList extends Component {
         this.setState({
           inventoryList: res.data,
         });
-      });    
+      });
     }
   }
 
