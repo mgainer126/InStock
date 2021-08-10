@@ -36,6 +36,9 @@ $desktop-width: 1280px;
     width: 80%;
     font-size: 0.8125rem;
     color: white;
+    Link {
+      color: white;
+    }
     @media (min-width: $tablet-width) {
       width: 30%;
       margin: 0;
@@ -65,6 +68,8 @@ $desktop-width: 1280px;
       border-radius: 20px;
     }
     &--inactive {
+      color: white;
+      text-decoration: none;
       width: 10.1875rem;
       height: 2.25rem;
       display: flex;
