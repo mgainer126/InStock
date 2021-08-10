@@ -1,20 +1,9 @@
-@use '../../partials/mixins.scss' as *;
-$tablet-margin-list: 2rem;
-body {
-  /* White */
-
-  background: #ffffff;
-  /* Card Shadow */
-
-  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  border-radius: 3px;
+@use './../../partials/mixins' as *;
+.tablet {
+  display: none;
 }
-
-// .tablet {
-//   display: none;
-// }
 .item {
-  // list-style: none;
+  list-style: none;
   border: solid #bdc5d5 1px;
   padding: 0;
   font-size: 13px;
@@ -34,7 +23,6 @@ body {
   }
   &__item {
     color: #2e66e5;
-    //styleName: M H3;
     font-family: Titillium Web;
     font-size: 13px;
     font-style: normal;
@@ -63,23 +51,10 @@ body {
     }
   }
 }
-
-h4 {
-  height: 16px;
-  width: 150px;
-  left: 40px;
-  top: 349px;
-  color: #13182c;
-  margin-right: auto;
-  margin-left: 1.5rem;
-}
-
-// @media screen and (min-width: 768px) {
-//   h4 {
 @include tablet {
-  // .mobile {
-  //   display: none;
-  // }
+  .mobile {
+    display: none;
+  }
   .tablet {
     display: flex;
     padding-left: 2rem;
@@ -106,4 +81,14 @@ h4 {
       }
     }
   }
+}
+h4 {
+  height: 16px;
+  width: 150px;
+  left: 40px;
+  top: 349px;
+  color: #5c667e;
+}
+.hidden {
+  display: none;
 }
