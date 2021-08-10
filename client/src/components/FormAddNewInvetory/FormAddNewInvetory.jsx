@@ -48,20 +48,30 @@ function FormAddNewInventory({
                 className="additem__cat-item"
                 name="category-1"
               >
-                Item 1
+                Please Select
+              </option>
+              <option
+                value="category-1"
+                className="additem__cat-item"
+                name="category-1"
+              >
+                Gear
               </option>
               <option
                 value="category-2"
                 className="additem__cat-item"
                 name="category-2"
               >
-                Item 2
+                Apparel
               </option>
               <option className="additem__cat-item" name="category-3">
-                Item 3
+                Accessories
               </option>
               <option className="additem__cat-item" name="category-4">
-                Item 4
+                Health
+              </option>
+              <option className="additem__cat-item" name="category-4">
+                Electronics
               </option>
             </select>
           </div>

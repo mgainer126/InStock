@@ -8,7 +8,7 @@ function InventorySelectedWarehouse({ inventoryByWarehouse }) {
   return inventoryByWarehouse.map((item) => {
     return (
       <div>
-        <ul className="item">
+        <div className="item">
           <div className="item__arrangement">
             <section className="item__sub-arrangement">
               <div>
@@ -16,37 +16,35 @@ function InventorySelectedWarehouse({ inventoryByWarehouse }) {
                 {/* <div onClick={() => clickhandle(item)}> */}
                 <div>
                   <Link to={`/itemDetails/${item.id}`}>
-                    <li className="item__item">
-                      {item.itemName + " " + " > "}
-                    </li>
+                    <p className="item__item">{item.itemName + " " + " > "}</p>
                   </Link>
                 </div>
               </div>
               <div>
                 <h4>CATEGORY</h4>
-                <li className="item__category">{item.category}</li>
+                <p className="item__category">{item.category}</p>
               </div>
             </section>
             <section className="item__sub-arrangement">
               <div>
                 <h4>STATUS</h4>
-                <li className="item__status">{item.status}</li>
+                <p className="item__status">{item.status}</p>
               </div>
               <div>
                 <h4>QUANTITY</h4>
-                <li className="item__qty">{item.quantity}</li>
+                <p className="item__qty">{item.quantity}</p>
               </div>
               <div>
                 <h4>WAREHOUSE</h4>
-                <li className="item__warehouse">{item.warehouseName}</li>
+                <p className="item__warehouse">{item.warehouseName}</p>
+              </div>
+              <div className="item__action">
+                <img src={trash} alt="trash"></img>
+                <img src={edit} alt="edit"></img>
               </div>
             </section>
           </div>
-          <div className="item__action">
-            <img src={trash} alt="trash"></img>
-            <img src={edit} alt="edit"></img>
-          </div>
-        </ul>
+        </div>
       </div>
     );
   });
