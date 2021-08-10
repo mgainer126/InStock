@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 // import { Link } from react-router-dom;
 // import "./Header.scss";
+=======
+import { Link } from 'react-router-dom';
+import "./Header.scss";
+>>>>>>> development
 import React from "react";
 import logo from "../../assets/Logo/InStock-Logo.svg";
 function Header() {
