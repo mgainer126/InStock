@@ -2,10 +2,11 @@ import ItemDetail from "../src/pages/ItemDetail/ItemDetail";
 import WarehouseDetail from "../src/pages/WarehouseDetail/WarehouseDetail";
 import AddInventoryItem from "../src/pages/AddInventoryItem/AddInventoryItem";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import InventoryItemDetails from "./components/InventoryItemDetials/InventoryItemDetials";
-import WharehouseDetails from "./components/WarehouseDetials/WarehouseDetails";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
+import Header from "../src/components/Header/Header";
+import InventoryList from "../src/components/InventoryList/InventoryList";
+import Footer from "../src/components/Footer/Footer";
 
 function App() {
   return (

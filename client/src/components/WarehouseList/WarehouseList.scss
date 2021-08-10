@@ -5,6 +5,10 @@
 .main {
   width: 87.5%;
   margin: auto;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
   &__title {
     @include mobile-page-header;
     @include tablet {
