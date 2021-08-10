@@ -54,7 +54,7 @@ function Inventory({ inventoryarr, clickhandle }) {
       ) : null}
       {inventoryarr.map((item) => {
         return (
-          <div key={item.id}>
+          <div key={item.id} className={showModal ? "hidden" : ""}>
             <ul className="item mobile">
               <div className="item__arrangement">
                 <section className="item__sub-arrangement">
