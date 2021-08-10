@@ -1,3 +1,4 @@
+
 $tablet-margin-list: 2rem;
 body {
   /* White */
@@ -7,6 +8,12 @@ body {
 
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   border-radius: 3px;
+}
+
+
+@use './../../partials/mixins' as *;
+.tablet {
+  display: none;
 }
 
 .item {
@@ -28,7 +35,6 @@ body {
   }
   &__item {
     color: #2e66e5;
-    //styleName: M H3;
     font-family: Titillium Web;
     font-size: 13px;
     font-style: normal;
@@ -38,6 +44,7 @@ body {
     text-align: left;
   }
 }
+
 h4 {
   height: 16px;
   width: 150px;
@@ -54,6 +61,13 @@ h4 {
     display: none;
   }
   .item {
+
+@include tablet {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+
     display: flex;
     justify-content: center;
     width: 45rem;
@@ -94,4 +108,14 @@ h4 {
       width: 3rem;
     }
   }
+}
+h4 {
+  height: 16px;
+  width: 150px;
+  left: 40px;
+  top: 349px;
+  color: #5c667e;
+}
+.hidden {
+  display: none;
 }

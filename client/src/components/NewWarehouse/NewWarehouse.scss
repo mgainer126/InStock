@@ -1,0 +1,94 @@
+@use './../../partials/mixins' as *;
+.new-warehouse {
+  padding-left: 24px;
+  padding-right: 24px;
+  &__header {
+    display: flex;
+    column-gap: 2rem;
+  }
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  &-footer {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    column-gap: 1rem;
+    &__button {
+      border-radius: 20px;
+      padding: 8px, 16px, 8px, 16px;
+      border: 1px solid #bdc5d5;
+      background-color: white;
+      height: 38px;
+      width: 100%;
+      &--primary {
+        background-color: #2e65e5;
+        color: white;
+      }
+    }
+  }
+}
+.input {
+  height: 36px;
+  width: 295px;
+  left: 40px;
+  top: 220px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #bdc5d5;
+  box-sizing: border-box;
+}
+::placeholder {
+  padding-left: 1rem;
+}
+.error {
+  color: red;
+  margin: 0;
+}
+@include tablet {
+  .form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .new-warehouse {
+    width: 100%;
+    &__header {
+      justify-content: flex-start;
+      column-gap: 2rem;
+      border-bottom: 1px solid black;
+      margin-bottom: 1rem;
+      h1 {
+        font-size: 3em;
+      }
+    }
+    &__content {
+      h4 {
+        font-size: 1.5em;
+        color: black;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__content:nth-child(2) {
+      border-left: 1px solid black;
+    }
+    &-footer {
+      justify-content: flex-end;
+      &__button {
+        width: initial;
+      }
+    }
+  }
+}
+label {
+  font-weight: bold;
+}

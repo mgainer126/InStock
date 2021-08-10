@@ -103,9 +103,9 @@ const displayInventoryDetails = () => {
   const inventoryDetailsData = fs.readFileSync(
     path.resolve(__dirname, "../data/inventories.json")
   );
-  const parsedInventoryDetails = JSON.parse(inventoryDetailsData);
-  console.log(parsedInventoryDetails);
-  return parsedInventoryDetails;
+  const parsedWarehouseDetails = JSON.parse(WarehouseDetailsData);
+  console.log(parsedWarehouseDetails);
+  return parsedWarehouseDetails;
 };
 router.get("/", (req, res) => {
   const WarehouseDetails = displayWarehouseDetails();

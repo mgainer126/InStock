@@ -1,5 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./Header.scss";
+
+import { Link } from "react-router-dom";
+import "./Header.scss";
+
 import React from "react";
 import logo from "../../assets/Logo/InStock-Logo.svg";
 function Header() {
@@ -10,7 +14,9 @@ function Header() {
       </div>
       <div className="header__links">
         <p className="header__links--active">Warehouses</p>
-        <p className="header__links--inactive">Inventory</p>
+        <Link className="header__links--inactive" to="/inventory">
+          Inventory
+        </Link>
       </div>
     </div>
   );

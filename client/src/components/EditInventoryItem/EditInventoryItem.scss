@@ -1,0 +1,154 @@
+@use "../../partials/colors" as *;
+@use "../../partials/mixins" as *;
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.0625rem solid $Cloud;
+  width: 90%;
+  margin: auto;
+  &__img {
+    padding-right: 0.5rem;
+  }
+  &__header {
+    @include mobile-page-header;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  &__top-section {
+    border-bottom: 0.0625rem solid $Cloud;
+    padding-bottom: 1.5rem;
+    @include tablet {
+      border: none;
+    }
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  &__item-field {
+    margin: auto;
+    width: 90%;
+    border: 0.0625rem solid $Cloud;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+    @include mobile-body-medium;
+  }
+  &__desc-field {
+    margin: auto;
+    width: 90%;
+    border: 0.0625rem solid $Cloud;
+    height: 7.5rem;
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0 0 0.75rem;
+    @include mobile-body-medium;
+  }
+  &__category-select {
+    width: 100%;
+    height: 2.25rem;
+    border: 1px solid $Cloud;
+    border-radius: 1.25rem;
+    padding-left: 0.75rem;
+    @include mobile-body-medium;
+  }
+  &__bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &--radio1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &--radio2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__button {
+    background-color: rgba(247, 248, 249, 0.7);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    @include tablet {
+      justify-content: flex-end;
+    }
+    &--btn1 {
+      width: 8.6875rem;
+      height: 2.25rem;
+      border: 0.0625rem solid $Cloud;
+      border-radius: 1.25rem;
+      background-color: $white;
+      color: $Slate;
+      @include mobile-labels-buttons;
+      font-weight: 600;
+      @include tablet {
+        width: 4.5rem;
+        margin-right: 1rem;
+      }
+    }
+    &--btn2 {
+      width: 8.6875rem;
+      height: 2.25rem;
+      border: none;
+      border-radius: 1.25rem;
+      background-color: $In-stock-Indigo;
+      color: $white;
+      @include mobile-labels-buttons;
+      font-weight: 600;
+      @include tablet {
+        width: 3.8125rem;
+      }
+      @include desktop {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+
+::placeholder {
+  color: $In-stock-Black;
+  @include mobile-labels-buttons;
+}
+
+.label {
+  padding: 0.5rem;
+  @include mobile-body-medium;
+  font-weight: 600;
+}
+
+h2 {
+  @include mobile-subheader;
+}
+
+.tablet {
+  @include tablet {
+    padding-bottom: 1rem;
+  }
+  &__box1 {
+    @include tablet {
+      width: 50%;
+    }
+  }
+  &__box2 {
+    margin-bottom: 1rem;
+    @include tablet {
+      width: 50%;
+      border-left: 1px solid $Cloud;
+    }
+  }
+  @include tablet {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+}
